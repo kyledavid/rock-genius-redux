@@ -24,4 +24,17 @@ const positions = [
   }
 ]
 
-export default () => <div>{positions.map( (position) => <Hold compStyle={position} />)}</div>
+export default (props) => {
+  return (
+    <div className='Route'>
+      {positions.map( (position, index) => {
+        return <Hold
+          compStyle={position}
+          key={index}
+          setActive={props.setActive.bind(null, index)}
+          active={props.active === index}
+        />
+      })}
+    </div>
+  )
+}
