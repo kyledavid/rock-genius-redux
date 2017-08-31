@@ -14,7 +14,8 @@
         "left": "310px"
       },
       "desc": "Crimpy Sidepull, new starting hold.",
-      "foothold": false
+      "foothold": false,
+      "pic": "start-hold.jpg"
     },
     {
       "position": {

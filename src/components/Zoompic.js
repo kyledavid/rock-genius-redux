@@ -1,3 +1,15 @@
 import React from 'react'
 
-export default () => <div className='zoom-pic'>Oh Boy I'm zoomed!</div>
+class Zoompic extends React.Component {
+  render() {
+    let imgName = this.props.pic
+
+    return (
+      <div className='zoom-pic'>
+        <img src={imgName ? require(`../img/${imgName}`) : null} />
+      </div>
+    )
+  }
+}
+
+export default Zoompic

@@ -7,9 +7,9 @@ export default (props) => <span
   style={props.compStyle}
   onClick={props.setActive}
   >
-    <Detail
+    {/*<Detail
       active={props.active}
       topDistance={props.topDistance}
       description={props.description}
-    />
+    />*/}
   </span>

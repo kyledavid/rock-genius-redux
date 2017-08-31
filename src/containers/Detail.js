@@ -1,5 +1,5 @@
 import React from 'react'
-import ZoomPic from '../components/ZoomPic'
+import ZoomPic from '../components/Zoompic'
 import Descriptor from '../components/Descriptor'
 
 class Detail extends React.Component {
@@ -24,7 +24,6 @@ class Detail extends React.Component {
   }
 
   render() {
-    {console.log('rendered')}
     let elementClasses = 'detail-container'
     if (this.props.active) elementClasses += ' active'
     if (this.state.closeToTop) elementClasses += ' hang-from-top'

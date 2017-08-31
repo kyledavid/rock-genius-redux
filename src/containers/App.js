@@ -26,7 +26,9 @@ export default class App extends React.Component {
           active={this.state.active}
           setActive={this.setActive}
         />
-        {/* <Shelf />*/}
+        <Shelf
+          active={this.state.active}
+        />
       </main>
     )
   }

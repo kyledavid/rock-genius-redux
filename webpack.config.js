@@ -12,7 +12,7 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.(gif|jpe?g|png|ico)$/,
+        test: /\.(gif|jpe?g|jpg|png|ico)$/,
         loader: 'url-loader?limit=10000'
       },
       {

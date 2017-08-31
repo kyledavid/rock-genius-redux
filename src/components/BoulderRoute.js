@@ -5,7 +5,7 @@ import {positionFromTop} from '../utils/helpers'
 
 export default (props) => {
   return (
-    <div className='Route'>
+    <div className='route'>
       {pearl.map( (hold, index) => {
         return <Hold
           compStyle={hold.position}
