@@ -1,0 +1,39 @@
+{
+  "pearl": [
+    {
+      "position": {
+        "bottom": "130px",
+        "left": "322px"
+      },
+      "desc": "Crimpy Sidepull"
+    },
+    {
+      "position": {
+        "bottom": "177px",
+        "left": "255px"
+      },
+      "desc": "Shallow Pocket"
+    },
+    {
+      "position": {
+        "bottom": "270px",
+        "left": "312px"
+      },
+      "desc": "Good Pocket"
+    },
+    {
+      "position": {
+        "bottom": "330px",
+        "left": "252px"
+      },
+      "desc": "Shallow Pocket"
+    },
+    {
+      "position": {
+        "bottom": "445px",
+        "left": "282px"
+      },
+      "desc": "Jug Topout"
+    }
+  ]
+}

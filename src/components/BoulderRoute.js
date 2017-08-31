@@ -1,38 +1,19 @@
 import React from 'react'
 import Hold from './Hold'
-
-const positions = [
-  {
-    bottom: '130px',
-    left: '322px',
-  },
-  {
-    bottom: '177px',
-    left: '255px',
-  },
-  {
-    bottom: '270px',
-    left: '312px',
-  },
-  {
-    bottom: '330px',
-    left: '252px',
-  },
-  {
-    bottom: '130px',
-    left: '322px',
-  }
-]
+import {pearl} from '../utils/routes.json'
+import {positionFromTop} from '../utils/helpers'
 
 export default (props) => {
   return (
     <div className='Route'>
-      {positions.map( (position, index) => {
+      {pearl.map( (hold, index) => {
         return <Hold
-          compStyle={position}
+          compStyle={hold.position}
           key={index}
           setActive={props.setActive.bind(null, index)}
           active={props.active === index}
+          description={hold.desc}
+          topDistance={positionFromTop.bind(null, index)}
         />
       })}
     </div>
