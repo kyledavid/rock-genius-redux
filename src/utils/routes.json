@@ -5,35 +5,64 @@
         "bottom": "130px",
         "left": "322px"
       },
-      "desc": "Crimpy Sidepull"
+      "desc": "Cracked Rail, former start hold. Use as foothold only.",
+      "foothold": true
+    },
+    {
+      "position": {
+        "bottom": "140px",
+        "left": "310px"
+      },
+      "desc": "Crimpy Sidepull, new starting hold.",
+      "foothold": false
     },
     {
       "position": {
         "bottom": "177px",
         "left": "255px"
       },
-      "desc": "Shallow Pocket"
+      "desc": "A polished and shallow two finger pocket. The other starting hold.",
+      "foothold": true
     },
     {
       "position": {
         "bottom": "270px",
         "left": "312px"
       },
-      "desc": "Good Pocket"
+      "desc": "Crimpy Rail, match on this.",
+      "foothold": true
     },
     {
       "position": {
         "bottom": "330px",
         "left": "252px"
       },
-      "desc": "Shallow Pocket"
+      "desc": "Sharp Jug",
+      "foothold": true
     },
     {
       "position": {
-        "bottom": "445px",
-        "left": "282px"
+        "bottom": "364px",
+        "left": "273px"
       },
-      "desc": "Jug Topout"
+      "desc": "Crimpy Rail",
+      "foothold": false
+    },
+    {
+      "position": {
+        "bottom": "395px",
+        "left": "252px"
+      },
+      "desc": "Crimpy pocket, bump this to top left jug",
+      "foothold": false
+    },
+    {
+      "position": {
+        "bottom": "425px",
+        "left": "252px"
+      },
+      "desc": "Jug Topout",
+      "foothold": false
     }
   ]
 }

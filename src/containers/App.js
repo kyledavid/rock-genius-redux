@@ -1,5 +1,6 @@
 import React from 'react'
 import Boulder from '../components/Boulder'
+import Shelf from './Shelf'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,12 +21,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <section>
+      <main className="container">
         <Boulder
           active={this.state.active}
           setActive={this.setActive}
         />
-      </section>
+        {/* <Shelf />*/}
+      </main>
     )
   }
 }

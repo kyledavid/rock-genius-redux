@@ -1,5 +1,17 @@
+body {
+  background-color: #efefef;
+}
+
 #boulder-container {
   position: relative;
+  background-color: #fff;
+}
+
+#detail-shelf {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .single-hold {
@@ -35,4 +47,11 @@
   width: 300px;
   height: 120px;
   background-color: #ccc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow-y: hidden;
 }
