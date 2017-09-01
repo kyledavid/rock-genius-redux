@@ -5,19 +5,21 @@ import {pearl} from '../utils/routes.json'
 
 class Shelf extends React.Component {
   render() {
-    let hold = pearl[this.props.active]
+    let hold = pearl.holds[this.props.active]
     return this.props.active !== null ? (
-      <aside id="detail-shelf">
-        <div className="shelf-inner-wrapper">
-          <Zoompic
-            pic={hold.pic}
-          />
-          <Descriptor
-            description={hold.desc}
-            isFoot={hold.foothold}
-          />
-        </div>
-      </aside>
+      <div className="shelf-outer-wrapper">
+        <aside id="detail-shelf">
+          <div className="shelf-inner-wrapper">
+            <Zoompic
+              pic={hold.pic}
+            />
+            <Descriptor
+              description={hold.desc}
+              isFoot={hold.foothold}
+            />
+          </div>
+        </aside>
+      </div>
 
     ) : <aside id="detail-shelf"></aside>
 

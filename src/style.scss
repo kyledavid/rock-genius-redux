@@ -39,11 +39,37 @@ body {
   }
 }
 
-
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   overflow-y: hidden;
+}
+
+.beta {
+  height: 200px;
+  width: 760px;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+  padding: 1em 2em;
+  background-color: #fff;
+  h3 {
+    margin-top: 0;
+  }
+  p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1.6em;
+    font-family: Georgia;
+  }
+}
+
+.shelf-outer-wrapper {
+  position: fixed;
+  width: 1200px;
+  height: 0;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
 }

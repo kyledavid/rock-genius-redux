@@ -1,4 +1,5 @@
 import React from 'react'
+import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
 import imageNames from '../utils/image-names.json'
@@ -46,6 +47,7 @@ export default class App extends React.Component {
         <Shelf
           active={this.state.active}
         />
+        <Beta />
       </main>
     )
   }
