@@ -4,4 +4,5 @@ import App from './containers/App'
 import './style.scss'
 import 'normalize.css'
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App
+  />, document.getElementById('app'))
