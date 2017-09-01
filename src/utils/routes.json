@@ -24,7 +24,8 @@
         "left": "255px"
       },
       "desc": "A polished and shallow two finger pocket. The other starting hold.",
-      "foothold": true
+      "foothold": true,
+      "pic": "start-hold-two.jpg"
     },
     {
       "position": {
@@ -32,7 +33,8 @@
         "left": "312px"
       },
       "desc": "Crimpy Rail, match on this.",
-      "foothold": true
+      "foothold": true,
+      "pic": "hold-the-third.jpg"
     },
     {
       "position": {
@@ -40,7 +42,8 @@
         "left": "252px"
       },
       "desc": "Sharp Jug",
-      "foothold": true
+      "foothold": true,
+      "pic": "second-hold.jpg"
     },
     {
       "position": {
@@ -48,7 +51,8 @@
         "left": "273px"
       },
       "desc": "Crimpy Rail",
-      "foothold": false
+      "foothold": false,
+      "pic": "hold-the-third.jpg"
     },
     {
       "position": {
@@ -56,7 +60,8 @@
         "left": "252px"
       },
       "desc": "Crimpy pocket, bump this to top left jug",
-      "foothold": false
+      "foothold": false,
+      "pic": "start-hold-two.jpg"
     },
     {
       "position": {
@@ -64,7 +69,8 @@
         "left": "252px"
       },
       "desc": "Jug Topout",
-      "foothold": false
+      "foothold": false,
+      "pic": "second-hold.jpg"
     }
   ]
 }

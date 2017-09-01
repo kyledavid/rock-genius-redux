@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
+    "postinstall": "webpack -p",
+    "prod": "NODE_ENV=production node server.js",
     "start": "webpack-dev-server --open"
   },
   "repository": {
@@ -32,6 +34,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
+    "express": "^4.15.4",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
     "normalize.css": "^7.0.0",
