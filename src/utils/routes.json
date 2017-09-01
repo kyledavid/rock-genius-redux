@@ -1,6 +1,60 @@
 {
   "pearl": {
-    "beta": "Start on the decent sidepull with your right hand with your left on the polished and obvious pocket. Make a high step to the chipped rail with your right foot. Grab a higher up rail with your right hand and match. Switch your feet and reach for a jug to your left. Get your left foot in the starting pocket and grab a crimpy rail with your right. High step again to the rail from before. Crimp with your left in a large pocket and bump your left up to the top out jugs.",
+    "beta": [
+        {
+          "chunk": "Start on the decent sidepull with your right hand, with your left on the polished and obvious pocket",
+          "activeHolds": [1,2]
+        },
+        {
+          "chunk": ". "
+        },
+        {
+          "chunk": "Make a high step to the chipped rail with your right foot",
+          "activeHolds": [0,1,2]
+        },
+        {
+          "chunk": ". "
+        },
+        {
+          "chunk": "Grab a higher up rail with your right hand and match",
+          "activeHolds": [0,3]
+        },
+        {
+          "chunk": ". "
+        },
+        {
+          "chunk": "Switch your feet and reach for a jug to your left",
+          "activeHolds": [0,3,4]
+        },
+        {
+          "chunk": ". "
+        },
+        {
+          "chunk": "Get your left foot in the starting pocket and grab a crimpy rail with your right",
+          "activeHolds": [2,4,5]
+        },
+        {
+          "chunk": ". "
+        },
+        {
+          "chunk": "High step again to the rail from before",
+          "activeHolds": [2,3,4,5]
+        },
+        {
+          "chunk": ". "
+        },
+        {
+          "chunk": "Crimp with your left in a large pocket",
+          "activeHolds": [2,3,5,6]
+        },
+        {
+          "chunk": " "
+        },
+        {
+          "chunk": "and bump your left up to the top out jugs.",
+          "activeHolds": [2,3,5,7]
+        }
+      ],
     "holds": [
       {
         "position": {

@@ -9,6 +9,7 @@ export default (props) => {
       <BoulderRoute
         active={props.active}
         setActive={props.setActive}
+        highlighted={props.highlighted}
       />
     </div>
   )

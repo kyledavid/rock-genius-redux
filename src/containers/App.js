@@ -10,9 +10,19 @@ export default class App extends React.Component {
 
     this.state = {
       active: 1,
+      highlightedHolds: [1,3,4]
     }
 
     this.setActive = this.setActive.bind(this)
+    this.highLightHolds = this.highLightHolds.bind(this)
+  }
+
+  highLightHolds(holdList) {
+    console.log('i did thangs')
+    console.log(holdList)
+    this.setState({
+      highlightedHolds: holdList
+    })
   }
 
   preLoadImages() {
@@ -42,12 +52,15 @@ export default class App extends React.Component {
         <Boulder
           active={this.state.active}
           setActive={this.setActive}
+          highlighted={this.state.highlightedHolds}
 
         />
         <Shelf
           active={this.state.active}
         />
-        <Beta />
+        <Beta
+          updateHighlights={this.highLightHolds}
+        />
       </main>
     )
   }

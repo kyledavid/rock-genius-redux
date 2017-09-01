@@ -1,0 +1,11 @@
+#beta a{
+  text-decoration: none;
+  color: #000;
+  &.active {
+    color: rgb(255,255,50);
+  }
+}
+
+span.highlighted {
+  background-color: yellow;
+}
