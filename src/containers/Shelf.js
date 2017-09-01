@@ -6,7 +6,7 @@ import {pearl} from '../utils/routes.json'
 class Shelf extends React.Component {
   render() {
     let hold = pearl[this.props.active]
-    return (
+    return this.props.active !== null ? (
       <aside id="detail-shelf">
         <div className="shelf-inner-wrapper">
           <Zoompic
@@ -14,10 +14,14 @@ class Shelf extends React.Component {
           />
           <Descriptor
             description={hold.desc}
+            isFoot={hold.foothold}
           />
         </div>
       </aside>
-    )
+
+    ) : <aside id="detail-shelf"></aside>
+
+    return <div></div>
   }
 }
 

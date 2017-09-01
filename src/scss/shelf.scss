@@ -4,6 +4,8 @@
   top: 0;
   bottom: 0;
   width: 300px;
+  font-family: monospace, arial, sans-serif;
+  font-size: 13px;
 }
 
 .zoom-pic {
@@ -22,6 +24,10 @@
   margin-top: .5em;
   padding: 1em;
   flex: 1;
+}
+
+.descriptor-label {
+  font-weight: bold;
 }
 
 .shelf-inner-wrapper {

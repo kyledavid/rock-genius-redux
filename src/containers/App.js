@@ -15,7 +15,8 @@ export default class App extends React.Component {
 
   setActive(active) {
       this.setState( (state) => {
-        return {active: state.active === active ? null: active,}
+        console.log(state.active)
+        return {active: state.active === active ? null : active,}
       })
   }
 
