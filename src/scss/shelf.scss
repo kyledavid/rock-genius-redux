@@ -1,0 +1,31 @@
+#detail-shelf {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+}
+
+.zoom-pic {
+  width: 300px;
+  min-height: 200px;
+  max-height: 415px;
+  overflow: hidden;
+  background-color: #ccc;
+  img {
+    width: 100%;
+  }
+}
+
+.description {
+  background-color: #fff;
+  margin-top: .5em;
+  padding: 1em;
+  flex: 1;
+}
+
+.shelf-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 574px;
+}

@@ -8,12 +8,14 @@ class Shelf extends React.Component {
     let hold = pearl[this.props.active]
     return (
       <aside id="detail-shelf">
-        <Zoompic
-          pic={hold.pic}
-        />
-        <Descriptor
-          description={this.props.active ? hold.desc : null}
-        />
+        <div className="shelf-inner-wrapper">
+          <Zoompic
+            pic={hold.pic}
+          />
+          <Descriptor
+            description={hold.desc}
+          />
+        </div>
       </aside>
     )
   }

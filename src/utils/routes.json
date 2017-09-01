@@ -6,7 +6,8 @@
         "left": "322px"
       },
       "desc": "Cracked Rail, former start hold. Use as foothold only.",
-      "foothold": true
+      "foothold": true,
+      "pic": "start-hold.jpg"
     },
     {
       "position": {
