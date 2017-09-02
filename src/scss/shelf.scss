@@ -11,9 +11,10 @@
 .zoom-pic {
   width: 300px;
   min-height: 200px;
-  max-height: 415px;
+  height: 415px;
   overflow: hidden;
-  background-color: #ccc;
+  
+  box-sizing: border-box;
   img {
     width: 100%;
   }

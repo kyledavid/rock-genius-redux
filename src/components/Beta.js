@@ -9,8 +9,12 @@ class Beta extends React.Component {
         <p>{pearl.beta.map( (chunk, index) => {
           return <a href="#beta"
             key={index}
-            style={chunk.activeHolds ? {backgroundColor: 'rgb(255,255,150)',} : null}
-            onClick={this.props.updateHighlights.bind(null, chunk.activeHolds)}
+            style={chunk.activeHolds ? {backgroundColor: '#eee',} : null}
+            className={this.props.activeBeta === index ? 'selected-beta' : null}
+            onClick={(e) => {
+              this.props.updateHighlights(chunk.activeHolds, e)
+              this.props.setActiveBeta(index, e)
+            }}
             >{chunk.chunk}</a>
         })}</p>
       </div>

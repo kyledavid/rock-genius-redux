@@ -5,8 +5,8 @@ import {pearl} from '../utils/routes.json'
 
 class Shelf extends React.Component {
   render() {
-    let hold = pearl.holds[this.props.active]
-    return this.props.active !== null ? (
+    let hold = pearl.holds[this.props.active] || {}
+    return (
       <div className="shelf-outer-wrapper">
         <aside id="detail-shelf">
           <div className="shelf-inner-wrapper">
@@ -20,11 +20,14 @@ class Shelf extends React.Component {
           </div>
         </aside>
       </div>
-
-    ) : <aside id="detail-shelf"></aside>
-
-    return <div></div>
+    )
   }
+}
+
+Shelf.defaultProps = {
+  pic: '',
+  description: '',
+  isFoot: ''
 }
 
 export default Shelf

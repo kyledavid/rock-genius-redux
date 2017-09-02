@@ -1,0 +1,7 @@
+Noticed react did not rerender components when passed new props, if the new props would create an error.
+
+Could not use spreader operator for some reason in a elements style. Will test if it doesn't work in that situation
+or in general
+
+Trying to rerender a component with a "mutated style object" didn't work, so I just set up conditional classes depending
+on if the component should be highlighted.

@@ -10,18 +10,30 @@ export default class App extends React.Component {
 
     this.state = {
       active: 1,
-      highlightedHolds: [1,3,4]
+      highlightedHolds: [1,3,4],
+      activeBeta: null,
     }
 
     this.setActive = this.setActive.bind(this)
     this.highLightHolds = this.highLightHolds.bind(this)
+    this.setActiveBeta = this.setActiveBeta.bind(this)
   }
 
-  highLightHolds(holdList) {
-    console.log('i did thangs')
-    console.log(holdList)
-    this.setState({
-      highlightedHolds: holdList
+  setActiveBeta(active) {
+    console.log(active)
+    this.setState( (state) => {
+      return {
+        activeBeta : state.activeBeta === active ? null : active
+      }
+    })
+  }
+
+  highLightHolds(holdList, event) {
+    event.stopPropagation()
+    this.setState( (state) => {
+      return {
+        highlightedHolds: state.highlightedHolds === holdList ? [] : holdList
+      }
     })
   }
 
@@ -40,7 +52,6 @@ export default class App extends React.Component {
   setActive(active, event) {
     event.stopPropagation()
       this.setState( (state) => {
-        console.log(state.active)
         return {active: state.active === active ? null : active,}
       })
   }
@@ -60,6 +71,8 @@ export default class App extends React.Component {
         />
         <Beta
           updateHighlights={this.highLightHolds}
+          setActiveBeta={this.setActiveBeta}
+          activeBeta={this.state.activeBeta}
         />
       </main>
     )
