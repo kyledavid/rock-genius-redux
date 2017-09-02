@@ -10,8 +10,8 @@ export default class App extends React.Component {
 
     this.state = {
       active: 1,
-      highlightedHolds: [1,3,4],
-      activeBeta: null,
+      highlightedHolds: [1,2],
+      activeBeta: 0,
     }
 
     this.setActive = this.setActive.bind(this)
