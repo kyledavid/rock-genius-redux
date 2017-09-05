@@ -12,10 +12,10 @@ const BoulderRoute = props => (
         <Hold
           compStyle={hold.position}
           key={index}
-          setActive={props.setActive.bind(null, index)}
+          setActive={e => props.setActive(index, e)}
           active={props.active === index}
           description={hold.desc}
-          topDistance={positionFromTop.bind(null, index)}
+          topDistance={() => positionFromTop(index)}
           highlighted={highlighted}
         />
       )

@@ -1,0 +1,34 @@
+#boulder-container {
+  position: relative;
+}
+
+.single-hold {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 1px solid yellow;
+  position: absolute;
+  z-index: 2;
+}
+
+.single-hold:focus {
+  outline: 0;
+}
+
+.single-hold.active {
+  border:3px solid rgb(100,240,255);
+  z-index: 1;
+}
+
+.back-button {
+    border: initial;
+    background-color: initial;
+    margin-right: .4em;
+}
+
+.rock-name {
+  font-family: monospace;
+  padding: .1em;
+  padding-right: 4em;
+  font-size: 1.4em;
+}

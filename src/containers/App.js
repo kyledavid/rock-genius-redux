@@ -1,4 +1,5 @@
 import React from 'react'
+import FontAwesome from 'react-fontawesome'
 import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
@@ -53,8 +54,12 @@ export default class App extends React.Component {
     return (
       <main
         className="container"
-        onClick={this.setActive.bind(null, null)}
+        onClick={(e) => this.setActive(null, e)}
       >
+
+        <h1>
+          <button className="fa fa-arrow-left back-button"></button><span className="rock-name">The Pearl</span>
+        </h1>
         <Boulder
           active={this.state.active}
           setActive={this.setActive}

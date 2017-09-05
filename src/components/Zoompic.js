@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import NoHold from './noHoldPic'
 
 const Zoompic = (props) => {
   const imgName = props.pic
-  const imgPath = `../img/${imgName}`
-  return (
-    <div className="zoom-pic">
-      <img src={imgName ? require(`../img/${imgName}`) : null} alt="Boulder Hold" />
-    </div>
-  )
+
+  if (props.pic) {
+    return (
+      <div className="zoom-pic">
+        <img src={imgName ? require(`../img/${imgName}`) : null} alt="Boulder Hold" />
+      </div>
+    )
+  }
+  return <NoHold />
 }
 
 Zoompic.propTypes = {

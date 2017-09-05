@@ -6,6 +6,24 @@
   }
 }
 
+.beta {
+  height: 200px;
+  width: 760px;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+  padding: 1em 2em;
+  background-color: #fff;
+  h3 {
+    margin-top: 0;
+  }
+  p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1.6em;
+    font-family: Georgia;
+  }
+}
+
 span.highlighted {
   border: 3px solid yellow;
 }

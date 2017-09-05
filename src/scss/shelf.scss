@@ -13,13 +13,18 @@
   min-height: 200px;
   height: 415px;
   overflow: hidden;
-  
+  background-color: #fff;
   box-sizing: border-box;
   img {
     width: 100%;
   }
 }
 
+.no-hold {
+    font-family: monospace;
+    font-size: 1.6em;
+    padding: 14px;
+}
 .description {
   background-color: #fff;
   margin-top: .5em;
@@ -29,6 +34,16 @@
 
 .descriptor-label {
   font-weight: bold;
+}
+
+.shelf-outer-wrapper {
+  position: fixed;
+  width: 1200px;
+  height: 0;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .shelf-inner-wrapper {
