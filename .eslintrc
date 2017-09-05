@@ -8,6 +8,8 @@
     "mocha": true
   },
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "semi": [2, "never"],
     "valid-jsdoc": ["error", {
       "requireReturn": true,
       "requireReturnType": true,

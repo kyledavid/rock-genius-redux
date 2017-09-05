@@ -1,25 +1,32 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import {pearl} from '../utils/routes.json'
+import { pearl } from '../utils/routes.json'
 
-class Beta extends React.Component {
-  render() {
-    return (
-      <div className="beta" id="beta">
-        <h3>Problem Beta</h3>
-        <p>{pearl.beta.map( (chunk, index) => {
-          return <a href="#beta"
-            key={index}
-            style={chunk.activeHolds ? {backgroundColor: '#eee',} : null}
-            className={this.props.activeBeta === index ? 'selected-beta' : null}
-            onClick={(e) => {
-              this.props.updateHighlights(chunk.activeHolds, e)
-              this.props.setActiveBeta(index, e)
-            }}
-            >{chunk.chunk}</a>
-        })}</p>
-      </div>
-    )
-  }
+const Beta = props => (<div className="beta" id="beta">
+  <h3>Problem Beta</h3>
+  <p>
+    {pearl.beta.map((chunk, index) => (<a
+      href="#beta"
+      key={index}
+      style={chunk.activeHolds ? { backgroundColor: '#eee' } : null}
+      className={props.activeBeta === index ? 'selected-beta' : null}
+      onClick={(e) => {
+        props.updateHighlights(chunk.activeHolds, e)
+        props.setActiveBeta(index, e)
+      }}
+    >
+      {chunk.chunk}</a>),
+    )}
+  </p>
+</div>
+)
+
+Beta.propTypes = {
+  activeBeta: PropTypes.number,
+}
+
+Beta.defaultProps = {
+  activeBeta: null,
 }
 
 export default Beta

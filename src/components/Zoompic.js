@@ -1,15 +1,18 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 
-class Zoompic extends React.Component {
-  render() {
-    let imgName = this.props.pic
+const Zoompic = (props) => {
+  const imgName = props.pic
+  const imgPath = `../img/${imgName}`
+  return (
+    <div className="zoom-pic">
+      <img src={imgName ? require(`../img/${imgName}`) : null} alt="Boulder Hold" />
+    </div>
+  )
+}
 
-    return (
-      <div className='zoom-pic'>
-        <img src={imgName ? require(`../img/${imgName}`) : null} />
-      </div>
-    )
-  }
+Zoompic.propTypes = {
+  pic: PropTypes.string.isRequired,
 }
 
 export default Zoompic
