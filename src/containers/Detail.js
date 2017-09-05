@@ -1,26 +1,32 @@
+/* NOT IN CURRENT USE */
+
 import React from 'react'
 import ZoomPic from '../components/Zoompic'
 import Descriptor from '../components/Descriptor'
 
 class Detail extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
-      closeToTop: false
+      closeToTop: false,
     }
   }
 
   componentDidMount() {
-    let closeToTop = this.props.topDistance()
-
-    this.setState({
-      closeToTop
-    })
+    this.setDistanceFromTop()
   }
 
   shouldComponentUpdate(nextProps, nextState) {
     return nextState.closeToTop && this.props.active || this.props.active !== nextProps.active
+  }
+
+  setDistanceFromTop() {
+    const closeToTop = this.props.topDistance()
+
+    this.setState({
+      closeToTop,
+    })
   }
 
   render() {

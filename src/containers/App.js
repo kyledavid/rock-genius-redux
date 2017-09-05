@@ -3,6 +3,7 @@ import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
 import imageNames from '../utils/image-names.json'
+import { preLoadImages } from '../utils/helpers'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,47 +20,41 @@ export default class App extends React.Component {
     this.setActiveBeta = this.setActiveBeta.bind(this)
   }
 
-  setActiveBeta(active) {
-    console.log(active)
-    this.setState( (state) => {
-      return {
-        activeBeta : state.activeBeta === active ? null : active
-      }
-    })
-  }
-
-  highLightHolds(holdList, event) {
-    event.stopPropagation()
-    this.setState( (state) => {
-      return {
-        highlightedHolds: state.highlightedHolds === holdList ? [] : holdList
-      }
-    })
-  }
-
-  preLoadImages() {
-    imageNames.map( (name) => {
-      let image = new Image()
-      image.src = require(`../img/${name}`)
-      return image
-    })
-  }
-
   componentDidMount() {
-    this.preLoadImages()
+    preLoadImages(imageNames)
+  }
+
+  setActiveBeta(active) {
+    this.setState(state => (
+      {
+        activeBeta: state.activeBeta === active ? null : active,
+      }),
+    )
   }
 
   setActive(active, event) {
     event.stopPropagation()
-      this.setState( (state) => {
-        return {active: state.active === active ? null : active,}
-      })
+    this.setState(state => (
+      { active: state.active === active ? null : active }
+    ),
+    )
+  }
+
+  highLightHolds(holdList, event) {
+    event.stopPropagation()
+    this.setState(state => (
+      {
+        highlightedHolds: state.highlightedHolds === holdList ? [] : holdList,
+      }),
+    )
   }
 
   render() {
     return (
-      <main className="container"
-        onClick={this.setActive.bind(null, null)}>
+      <main
+        className="container"
+        onClick={this.setActive.bind(null, null)}
+      >
         <Boulder
           active={this.state.active}
           setActive={this.setActive}

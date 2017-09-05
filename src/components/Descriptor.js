@@ -9,8 +9,13 @@ const Descriptor = props => (<div className="description">
 </div>)
 
 Descriptor.propTypes = {
-  description: PropTypes.string.isRequired,
-  isFoot: PropTypes.bool.isRequired,
+  description: PropTypes.string,
+  isFoot: PropTypes.bool,
+}
+
+Descriptor.defaultProps = {
+  isFoot: null,
+  description: null,
 }
 
 export default Descriptor

@@ -1,33 +1,34 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import Zoompic from '../components/Zoompic'
 import Descriptor from '../components/Descriptor'
-import {pearl} from '../utils/routes.json'
+import { pearl } from '../utils/routes.json'
 
-class Shelf extends React.Component {
-  render() {
-    let hold = pearl.holds[this.props.active] || {}
-    return (
-      <div className="shelf-outer-wrapper">
-        <aside id="detail-shelf">
-          <div className="shelf-inner-wrapper">
-            <Zoompic
-              pic={hold.pic}
-            />
-            <Descriptor
-              description={hold.desc}
-              isFoot={hold.foothold}
-            />
-          </div>
-        </aside>
-      </div>
-    )
-  }
+const Shelf = (props) => {
+  const hold = pearl.holds[props.active] || {}
+  return (
+    <div className="shelf-outer-wrapper">
+      <aside id="detail-shelf">
+        <div className="shelf-inner-wrapper">
+          <Zoompic
+            pic={hold.pic}
+          />
+          <Descriptor
+            description={hold.desc}
+            isFoot={hold.foothold}
+          />
+        </div>
+      </aside>
+    </div>
+  )
+}
+
+Shelf.propTypes = {
+  active: PropTypes.number,
 }
 
 Shelf.defaultProps = {
-  pic: '',
-  description: '',
-  isFoot: ''
+  active: null,
 }
 
 export default Shelf

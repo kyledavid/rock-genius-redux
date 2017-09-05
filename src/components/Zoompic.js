@@ -12,7 +12,11 @@ const Zoompic = (props) => {
 }
 
 Zoompic.propTypes = {
-  pic: PropTypes.string.isRequired,
+  pic: PropTypes.string,
+}
+
+Zoompic.defaultProps = {
+  pic: null,
 }
 
 export default Zoompic
