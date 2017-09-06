@@ -21,10 +21,11 @@
 }
 
 .no-hold {
-    font-family: monospace;
-    font-size: 1.6em;
-    padding: 14px;
+  font-family: monospace;
+  font-size: 1.6em;
+  padding: 14px;
 }
+
 .description {
   background-color: #fff;
   margin-top: .5em;
@@ -50,4 +51,5 @@
   display: flex;
   flex-direction: column;
   height: 574px;
+  padding-top: 83px;
 }

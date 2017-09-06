@@ -1,10 +1,12 @@
 @import './scss/beta';
 @import './scss/boulder';
+@import './scss/route-list';
 @import './scss/shelf';
 
 body {
   background-color: #f1f1f1;
   color: #444;
+  font-family: monospace, sans-serif;
 }
 
 .detail-container {
