@@ -59,7 +59,7 @@ export default class RouteDisplay extends React.Component {
       >
 
         <h1>
-          <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link><span className="rock-name">The Pearl</span>
+          <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link><span className="rock-name">{this.props.match.params.bouldername}</span>
         </h1>
         <Boulder
           active={this.state.active}

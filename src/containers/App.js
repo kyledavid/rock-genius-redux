@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Link, Route } from 'react-router-dom'
-import RouteDisplay from './RouteDisplay'
-import RouteSelection from './RouteSelection'
+import BoulderSelection from './BoulderSelection'
+import BoulderDisplay from './BoulderDisplay'
 
 const App = () => (
   <div>
-    <Route exact path="/" component={RouteSelection} />
-    <Route path="/route/:routename" component={RouteDisplay} />
+    <Route exact path="/" component={BoulderSelection} />
+    <Route path="/boulder/:bouldername" component={BoulderDisplay} />
   </div>
 )
 

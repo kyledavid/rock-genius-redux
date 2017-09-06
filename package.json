@@ -8,6 +8,7 @@
     "build": "webpack",
     "postinstall": "webpack -p",
     "prod": "NODE_ENV=production node server.js",
+    "localprod": "node server.js",
     "start": "webpack-dev-server --open"
   },
   "repository": {
