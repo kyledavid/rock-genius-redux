@@ -1,24 +1,17 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Zoompic from '../components/Zoompic'
-import Descriptor from '../components/Descriptor'
-import { pearl } from '../utils/routes.json'
+import { Route, Switch } from 'react-router'
+import HoldDetail from '../components/HoldDetail'
+import RouteSelection from './RouteSelection'
 
-const Shelf = (props) => {
-  const hold = pearl.holds[props.active] || {}
+const Shelf = ( {active} ) => {
   return (
-    <div className="shelf-outer-wrapper">
-      <aside id="detail-shelf">
-        <div className="shelf-inner-wrapper">
-          <Zoompic
-            pic={hold.pic}
-          />
-          <Descriptor
-            description={hold.desc}
-            isFoot={hold.foothold}
-          />
-        </div>
-      </aside>
+    <div>
+      <Switch>
+        <Route path="/boulder/:bouldername/:routename" render={() => <HoldDetail active={active}/>} active={active} />
+        <Route path="/boulder/:bouldername" component={RouteSelection} />
+      </Switch>
+
     </div>
   )
 }

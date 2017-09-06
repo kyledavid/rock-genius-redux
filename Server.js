@@ -7,3 +7,7 @@ app.use(express.static(__dirname + '/build'))
 app.listen(port, function() {
   console.log("App is running on port " + port)
 })
+
+app.get('*',function (req, res) {
+  res.redirect('/')
+})
