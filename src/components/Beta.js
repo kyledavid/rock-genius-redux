@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { pearl } from '../utils/routes.json'
+import { pearl } from '../utils/boulders.json'
 
 const Beta = props => (<div className="beta" id="beta">
   <h3>Problem Beta</h3>

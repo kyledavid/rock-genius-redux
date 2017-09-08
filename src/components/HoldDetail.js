@@ -1,10 +1,10 @@
 import React from 'react'
 import Zoompic from '../components/Zoompic'
 import Descriptor from '../components/Descriptor'
-import { pearl } from '../utils/routes.json'
+import Boulders from '../utils/boulders.json'
 
 export default ( {active} ) => {
-  const hold = pearl.holds[active] || {}
+  const hold = Boulders.pearl.routes['the pearl'].holds[active] || {}
   return (
     <div className="shelf-outer-wrapper">
       <aside id="detail-shelf">

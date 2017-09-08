@@ -69,11 +69,11 @@ export default class RouteDisplay extends React.Component {
         <Shelf
           active={this.state.active}
         />
-        <Beta
+        {/*<Beta
           updateHighlights={this.highLightHolds}
           setActiveBeta={this.setActiveBeta}
           activeBeta={this.state.activeBeta}
-        />
+        /> */}
       </main>
     )
   }

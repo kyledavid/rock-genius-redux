@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Hold from './Hold'
-import { pearl } from '../utils/routes.json'
+import Boulders from '../utils/boulders.json'
 import { positionFromTop } from '../utils/helpers'
 
 const BoulderRoute = props => (
+  <div>
+    {console.log(Boulders.pearl.routes['the pearl'])}
+    <h1>Bla bla bla</h1>
+  </div>
+)
+
+/*const BoulderRoute = props => (
   <div className="route">
     {pearl.holds.map((hold, index) => {
       const highlighted = props.highlighted.includes(index)
@@ -12,7 +19,7 @@ const BoulderRoute = props => (
         <Hold
           compStyle={hold.position}
           key={index}
-          setActive={e => props.setActive(index, e)}
+          setActive={props.setActive.bind(null, index)}
           active={props.active === index}
           description={hold.desc}
           topDistance={() => positionFromTop(index)}
@@ -32,6 +39,6 @@ BoulderRoute.propTypes = {
 BoulderRoute.defaultProps = {
   active: null,
   highlighted: null,
-}
+} */
 
 export default BoulderRoute
