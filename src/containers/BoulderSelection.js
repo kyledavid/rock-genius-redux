@@ -6,7 +6,7 @@ export default () => (
     <h1>Choose a Boulder</h1>
     <ul className="route-list">
       <li>
-        <Link to="/boulder/pearl" >The Pearl</Link>
+        <Link to="/boulders/pearl" >The Pearl</Link>
       </li>
     </ul>
   </div>

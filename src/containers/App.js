@@ -4,10 +4,12 @@ import BoulderSelection from './BoulderSelection'
 import BoulderDisplay from './BoulderDisplay'
 
 const App = () => (
-  <div>
-    <Route exact path="/" component={BoulderSelection} />
-    <Route path="/boulder/:bouldername" component={BoulderDisplay} />
-  </div>
+  <BrowserRouter>
+    <div>
+      <Route exact path="/" component={BoulderSelection} />
+      <Route path="/boulders/:boulder" component={BoulderDisplay} />
+    </div>
+  </BrowserRouter>
 )
 
 export default App

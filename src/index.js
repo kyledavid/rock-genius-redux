@@ -6,4 +6,4 @@ import App from './containers/App'
 import './style.scss'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))

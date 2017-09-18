@@ -7,7 +7,7 @@ import Shelf from './Shelf'
 import imageNames from '../utils/image-names.json'
 import { preLoadImages } from '../utils/helpers'
 
-export default class RouteDisplay extends React.Component {
+export default class BoulderDisplay extends React.Component {
   constructor(props) {
     super(props)
 
@@ -15,14 +15,20 @@ export default class RouteDisplay extends React.Component {
       active: 1,
       highlightedHolds: [],
       activeBeta: null,
+      boulderName: '',
+      routeName: '',
     }
 
     this.setActive = this.setActive.bind(this)
     this.highLightHolds = this.highLightHolds.bind(this)
     this.setActiveBeta = this.setActiveBeta.bind(this)
+    this.setBoulderName = this.setBoulderName.bind(this)
+    this.setRouteName = this.setRouteName.bind(this)
   }
 
   componentDidMount() {
+    const boulder = this.props.match.params.boulder
+    this.setBoulderName(boulder)
     preLoadImages(imageNames)
   }
 
@@ -51,6 +57,20 @@ export default class RouteDisplay extends React.Component {
     )
   }
 
+  setBoulderName(boulder) {
+    this.setState({
+      boulderName: boulder,
+      active: 1,
+    })
+  }
+
+  setRouteName(route) {
+    this.setState({
+      routeName: route,
+      active: 1,
+    })
+  }
+
   render() {
     return (
       <main
@@ -65,9 +85,11 @@ export default class RouteDisplay extends React.Component {
           active={this.state.active}
           setActive={this.setActive}
           highlighted={this.state.highlightedHolds}
+          routeName={this.state.routeName}
         />
         <Shelf
-          active={this.state.active}
+          active={1}
+          setRouteName={this.setRouteName}
         />
         {/*<Beta
           updateHighlights={this.highLightHolds}

@@ -3,15 +3,19 @@ import React from 'react'
 import BoulderRoute from './BoulderRoute'
 import boulderImg from '../img/pearl.jpg'
 
-const Boulder = props => (<div id="boulder-container">
-  <img src={boulderImg} alt="the-pearl" />
-  <BoulderRoute
-    active={props.active}
-    setActive={props.setActive}
-    highlighted={props.highlighted}
-  />
-</div>
-)
+const Boulder = props => {
+  return props.routeName ? (
+    <div id="boulder-container">
+      <img src={boulderImg} alt="the-pearl" />
+      <BoulderRoute
+        active={props.active}
+        setActive={props.setActive}
+        highlighted={props.highlighted}
+        routeName={props.routeName}
+      />
+    </div>
+  ) : <div id="boulder-container"><img src={boulderImg} alt="the-pearl" /></div>
+}
 
 Boulder.propTypes = {
   active: PropTypes.number,

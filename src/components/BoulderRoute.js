@@ -4,16 +4,16 @@ import Hold from './Hold'
 import Boulders from '../utils/boulders.json'
 import { positionFromTop } from '../utils/helpers'
 
-const BoulderRoute = props => (
+/*const BoulderRoute = props => (
   <div>
     {console.log(Boulders.pearl.routes['the pearl'])}
     <h1>Bla bla bla</h1>
   </div>
-)
+)*/
 
-/*const BoulderRoute = props => (
+const BoulderRoute = props => (
   <div className="route">
-    {pearl.holds.map((hold, index) => {
+    {Boulders.pearl.routes[props.routeName].holds.map((hold, index) => {
       const highlighted = props.highlighted.includes(index)
       return (
         <Hold
@@ -39,6 +39,6 @@ BoulderRoute.propTypes = {
 BoulderRoute.defaultProps = {
   active: null,
   highlighted: null,
-} */
+}
 
 export default BoulderRoute
