@@ -88,7 +88,7 @@ export default class BoulderDisplay extends React.Component {
           routeName={this.state.routeName}
         />
         <Shelf
-          active={1}
+          active={this.state.active}
           setRouteName={this.setRouteName}
         />
         {/*<Beta
