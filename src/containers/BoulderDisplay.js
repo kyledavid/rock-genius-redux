@@ -91,11 +91,11 @@ export default class BoulderDisplay extends React.Component {
           active={this.state.active}
           setRouteName={this.setRouteName}
         />
-        {/*<Beta
+        <Beta
           updateHighlights={this.highLightHolds}
           setActiveBeta={this.setActiveBeta}
           activeBeta={this.state.activeBeta}
-        /> */}
+        />
       </main>
     )
   }

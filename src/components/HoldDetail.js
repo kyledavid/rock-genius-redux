@@ -9,7 +9,6 @@ class HoldDetail extends React.Component {
     this.props.setRouteName('the pearl')
   }
 
-
   render() {
     const boulder = this.props.match.params.boulder
     const route = this.props.match.params.route
