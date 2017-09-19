@@ -3,11 +3,11 @@ import React from 'react'
 import Boulders from '../utils/boulders.json'
 
 const Beta = props => {
-  if (true) {
+  if (props.routeName) {
     return (<div className="beta" id="beta">
       <h3>Problem Beta</h3>
       <p>
-        {Boulders.pearl.routes['the pearl'].beta.map((chunk, index) => (<a
+        {Boulders.pearl.routes[props.routeName].beta.map((chunk, index) => (<a
           href="#beta"
           key={index}
           style={chunk.activeHolds ? { backgroundColor: '#eee' } : null}

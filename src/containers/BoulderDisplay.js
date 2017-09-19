@@ -92,6 +92,7 @@ export default class BoulderDisplay extends React.Component {
           setRouteName={this.setRouteName}
         />
         <Beta
+          routeName={this.state.routeName}
           updateHighlights={this.highLightHolds}
           setActiveBeta={this.setActiveBeta}
           activeBeta={this.state.activeBeta}
