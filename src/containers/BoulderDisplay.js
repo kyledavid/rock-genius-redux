@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
-import imageNames from '../utils/image-names.json'
+import Boulders from '../utils/boulders.json'
 import { preLoadImages } from '../utils/helpers'
 
 export default class BoulderDisplay extends React.Component {
@@ -24,12 +24,12 @@ export default class BoulderDisplay extends React.Component {
     this.setActiveBeta = this.setActiveBeta.bind(this)
     this.setBoulderName = this.setBoulderName.bind(this)
     this.setRouteName = this.setRouteName.bind(this)
+    this.preCacheImages = this.preCacheImages.bind(this)
   }
 
   componentDidMount() {
     const boulder = this.props.match.params.boulder
     this.setBoulderName(boulder)
-    preLoadImages(imageNames)
   }
 
   setActiveBeta(active) {
@@ -69,6 +69,14 @@ export default class BoulderDisplay extends React.Component {
       routeName: route,
       active: 1,
     })
+    this.preCacheImages(route)
+  }
+
+  preCacheImages(route) {
+    const boulderName = this.state.boulderName
+    const routeName = this.state.routeName
+    const path = boulderName + "/"+ route + "/"
+    preLoadImages(Boulders[boulderName].routes[route]["image names"], path)
   }
 
   render() {
