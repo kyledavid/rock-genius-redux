@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import BoulderRoute from './BoulderRoute'
-import boulderImg from '../img/pearl.jpg'
+import boulderImg from '../img/boulders/pearl/pearl.jpg'
 
 const Boulder = props => {
   return props.routeName ? (

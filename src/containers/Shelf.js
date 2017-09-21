@@ -7,10 +7,11 @@ import RouteSelection from './RouteSelection'
 const Shelf = ( props ) => {
   let setRouteName = props.setRouteName
   let active = props.active
+  let pathTo = props.pathTo
   return (
     <div>
       <Switch>
-        <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active} match={props.match} setRouteName={setRouteName} />} />
+        <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active} match={props.match} setRouteName={setRouteName} pathTo={pathTo}/>} />
         <Route path="/boulders/:boulder" component={RouteSelection} />
       </Switch>
     </div>

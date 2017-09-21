@@ -25,6 +25,7 @@ export default class BoulderDisplay extends React.Component {
     this.setBoulderName = this.setBoulderName.bind(this)
     this.setRouteName = this.setRouteName.bind(this)
     this.preCacheImages = this.preCacheImages.bind(this)
+    this.pathToImages = this.pathToImages.bind(this)
   }
 
   componentDidMount() {
@@ -72,10 +73,18 @@ export default class BoulderDisplay extends React.Component {
     this.preCacheImages(route)
   }
 
-  preCacheImages(route) {
+  pathToImages(route) {
     const boulderName = this.state.boulderName
     const routeName = this.state.routeName
-    const path = boulderName + "/"+ route + "/"
+    const path = route ? boulderName + '/' + route + '/' :
+      boulderName + '/' + routeName + '/'
+
+    return path
+  }
+
+  preCacheImages(route) {
+    const boulderName = this.state.boulderName
+    const path = this.pathToImages(route)
     preLoadImages(Boulders[boulderName].routes[route]["image names"], path)
   }
 
@@ -98,6 +107,7 @@ export default class BoulderDisplay extends React.Component {
         <Shelf
           active={this.state.active}
           setRouteName={this.setRouteName}
+          pathTo={this.pathToImages()}
         />
         <Beta
           routeName={this.state.routeName}

@@ -4,11 +4,12 @@ import NoHold from './noHoldPic'
 
 const Zoompic = (props) => {
   const imgName = props.pic
+  const path = props.pathTo + imgName
 
   if (props.pic) {
     return (
       <div className="zoom-pic">
-        <img src={imgName ? require(`../img/${imgName}`) : null} alt="Boulder Hold" />
+        <img src={imgName ? require(`../img/boulders/${path}`) : null} alt="Boulder Hold" />
       </div>
     )
   }
