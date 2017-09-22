@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
-import Boulders from '../utils/boulders.json'
+import boulderData from '../utils/boulders.json'
 import { preLoadImages } from '../utils/helpers'
 
 export default class BoulderDisplay extends React.Component {
@@ -24,13 +24,19 @@ export default class BoulderDisplay extends React.Component {
     this.setActiveBeta = this.setActiveBeta.bind(this)
     this.setBoulderName = this.setBoulderName.bind(this)
     this.setRouteName = this.setRouteName.bind(this)
-    this.preCacheImages = this.preCacheImages.bind(this)
     this.pathToImages = this.pathToImages.bind(this)
+    this.preCacheImages = this.preCacheImages.bind(this)
   }
 
   componentDidMount() {
     const boulder = this.props.match.params.boulder
     this.setBoulderName(boulder)
+  }
+
+  componentDidUpdate() {
+    if (this.state.routeName) {
+      this.preCacheImages()
+    }
   }
 
   setActiveBeta(active) {
@@ -70,22 +76,21 @@ export default class BoulderDisplay extends React.Component {
       routeName: route,
       active: 1,
     })
-    this.preCacheImages(route)
   }
 
-  pathToImages(route) {
+  pathToImages() {
     const boulderName = this.state.boulderName
     const routeName = this.state.routeName
-    const path = route ? boulderName + '/' + route + '/' :
-      boulderName + '/' + routeName + '/'
+    const path = boulderName + '/' + routeName + '/'
 
     return path
   }
 
-  preCacheImages(route) {
+  preCacheImages() {
     const boulderName = this.state.boulderName
+    const route = this.state.routeName
     const path = this.pathToImages(route)
-    preLoadImages(Boulders[boulderName].routes[route]["image names"], path)
+    preLoadImages(boulderData[boulderName].routes[route]["image names"], path)
   }
 
   render() {
@@ -107,7 +112,8 @@ export default class BoulderDisplay extends React.Component {
         <Shelf
           active={this.state.active}
           setRouteName={this.setRouteName}
-          pathTo={this.pathToImages()}
+          pathTo={this.pathToImages}
+          boulderData={boulderData}
         />
         <Beta
           routeName={this.state.routeName}

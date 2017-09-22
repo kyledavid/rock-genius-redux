@@ -8,10 +8,11 @@ const Shelf = ( props ) => {
   let setRouteName = props.setRouteName
   let active = props.active
   let pathTo = props.pathTo
+  let boulderData = props.boulderData
   return (
     <div>
       <Switch>
-        <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active} match={props.match} setRouteName={setRouteName} pathTo={pathTo}/>} />
+        <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active} boulderData={boulderData} match={props.match} setRouteName={setRouteName} pathTo={pathTo}/>} />
         <Route path="/boulders/:boulder" component={RouteSelection} />
       </Switch>
     </div>
