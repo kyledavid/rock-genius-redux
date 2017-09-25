@@ -5,7 +5,7 @@ import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
 import boulderData from '../utils/boulders.json'
-import { preLoadImages } from '../utils/helpers'
+import { preLoadImages, formatBoulderName } from '../utils/helpers'
 
 export default class BoulderDisplay extends React.Component {
   constructor(props) {
@@ -94,6 +94,7 @@ export default class BoulderDisplay extends React.Component {
   }
 
   render() {
+    let boulderName = formatBoulderName(this.props.match.params.boulder)
     return (
       <main
         className="container"
@@ -102,7 +103,7 @@ export default class BoulderDisplay extends React.Component {
 
         <h1>
           <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link>
-          <span className="rock-name">Boulder Selection</span>
+          <span className="rock-name">{boulderName}</span>
         </h1>
         <Boulder
           routeInfo={{
