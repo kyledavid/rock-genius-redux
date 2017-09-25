@@ -7,7 +7,7 @@ const Beta = props => {
     return (<div className="beta" id="beta">
       <h3>Problem Beta</h3>
       <p>
-        {Boulders.pearl.routes[props.routeName].beta.map((chunk, index) => (<a
+        {Boulders["the-pearl"].routes[props.routeName].beta.map((chunk, index) => (<a
           href="#beta"
           key={index}
           style={chunk.activeHolds ? { backgroundColor: '#eee' } : null}

@@ -11,6 +11,7 @@ const Shelf = ( props ) => {
   let boulderData = props.boulderData
   return (
     <div>
+      
       <Switch>
         <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active} boulderData={boulderData} match={props.match} setRouteName={setRouteName} pathTo={pathTo}/>} />
         <Route path="/boulders/:boulder" component={RouteSelection} />

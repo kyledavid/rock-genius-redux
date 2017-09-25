@@ -101,13 +101,16 @@ export default class BoulderDisplay extends React.Component {
       >
 
         <h1>
-          <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link><span className="rock-name">{this.props.match.params.bouldername}</span>
+          <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link>
+          <span className="rock-name">Boulder Selection</span>
         </h1>
         <Boulder
-          active={this.state.active}
-          setActive={this.setActive}
-          highlighted={this.state.highlightedHolds}
-          routeName={this.state.routeName}
+          routeInfo={{
+            active: this.state.active,
+            highlightedHolds: this.state.highlightedHolds,
+            routeName: this.state.routeName,
+            setActive: this.setActive,
+          }}
         />
         <Shelf
           active={this.state.active}

@@ -1,31 +1,36 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import BoulderRoute from './BoulderRoute'
-import boulderImg from '../img/boulders/pearl/pearl.jpg'
+import boulderImg from '../img/boulders/the-pearl/pearl.jpg'
 
 const Boulder = props => {
   return props.routeName ? (
     <div id="boulder-container">
       <img src={boulderImg} alt="the-pearl" />
       <BoulderRoute
-        active={props.active}
-        setActive={props.setActive}
-        highlighted={props.highlighted}
-        routeName={props.routeName}
+        activeHold={props.routeInfo.activeHold}
+        highlightedHolds={props.routeInfo.highlightedHolds}
+        routeName={props.routeInfo.routeName}
+        setActive={props.routeInfo.setActive}
       />
     </div>
   ) : <div id="boulder-container"><img src={boulderImg} alt="the-pearl" /></div>
 }
 
 Boulder.propTypes = {
-  active: PropTypes.number,
-  setActive: PropTypes.func.isRequired,
-  highlighted: PropTypes.arrayOf(PropTypes.number),
+  routeInfo: PropTypes.shape({
+    activeHold: PropTypes.number,
+    highlightedHolds: PropTypes.arrayOf(PropTypes.number),
+    routeName: PropTypes.string,
+    setActive: PropTypes.func.isRequired,
+  }).isRequired
 }
 
 Boulder.defaultProps = {
-  active: null,
-  highlighted: null,
+  routeInfo: {
+    active: null,
+    highlighted: null,
+  }
 }
 
 export default Boulder

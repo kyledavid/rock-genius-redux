@@ -1,10 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-/* import Detail from '../containers/Detail'
-
- const highlighted = {
-  backgroundColor: 'green',
-} */
 
 const Hold = (props) => {
   const compStyle = props.compStyle
@@ -16,11 +11,6 @@ const Hold = (props) => {
       onClick={props.setActive}
       tabIndex={0}
     >
-      {/* <Detail
-        active={props.active}
-        topDistance={props.topDistance}
-        description={props.description}
-      /> */}
     </span>
   )
 }
