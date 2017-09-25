@@ -4,7 +4,7 @@ import BoulderRoute from './BoulderRoute'
 import boulderImg from '../img/boulders/the-pearl/pearl.jpg'
 
 const Boulder = props => {
-  return props.routeName ? (
+  return props.routeInfo.routeName ? (
     <div id="boulder-container">
       <img src={boulderImg} alt="the-pearl" />
       <BoulderRoute

@@ -3,10 +3,10 @@ import React from 'react'
 import Hold from './Hold'
 import Boulders from '../utils/boulders.json'
 
-const BoulderRoute = ({activeHold, highLightHolds, routeName, setActive}) => (
+const BoulderRoute = ({activeHold, highlightedHolds, routeName, setActive}) => (
   <div className="route">
-    {Boulders.the-pearl.routes[routeName].holds.map((hold, index) => {
-      const highlighted = highlighted.includes(index)
+    {Boulders["the-pearl"].routes[routeName].holds.map((hold, index) => {
+      const highlighted = highlightedHolds.includes(index)
       return (
         <Hold
           active={activeHold === index}

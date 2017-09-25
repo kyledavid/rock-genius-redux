@@ -7,7 +7,7 @@ export const positionFromTop = (index) => {
 
 // precaches hold images
 export const preLoadImages = (imageNames, path) => {
-  imageNames.map((name) => {
+  imageNames.map(name => {
     const image = new Image()
     const fullPath = path + name
     image.src = require(`../img/boulders/${fullPath}`)
