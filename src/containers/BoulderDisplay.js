@@ -107,7 +107,7 @@ export default class BoulderDisplay extends React.Component {
         </h1>
         <Boulder
           routeInfo={{
-            active: this.state.active,
+            activeHold: this.state.active,
             highlightedHolds: this.state.highlightedHolds,
             routeName: this.state.routeName,
             setActive: this.setActive,
