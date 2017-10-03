@@ -16,7 +16,7 @@ export const preLoadImages = (imageNames, path) => {
 }
 
 export const formatBoulderName = (unformattedName) => {
-  let formattedName = unformattedName.split('-')
+  let formattedName = unformattedName.split(/-|\s/g)
   return formattedName.map(word => {
     return word.charAt(0).toUpperCase() + word.slice(1)
   }).join(' ')

@@ -4,12 +4,17 @@ import { Route, Switch } from 'react-router'
 import HoldDetail from '../components/HoldDetail'
 import RouteSelection from './RouteSelection'
 
-const Shelf = ( {setRouteName, active, pathTo, boulderData} ) => {
+const Shelf = ( {setRouteName, active, pathTo, boulderData, boulderName, boulderRoute} ) => {
   return (
     <div>
-
       <Switch>
-        <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active} boulderData={boulderData} match={props.match} setRouteName={setRouteName} pathTo={pathTo}/>} />
+        <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active}
+          boulderData={boulderData}
+          boulderName={boulderName}
+          boulderRoute={boulderRoute}
+          match={props.match}
+          setRouteName={setRouteName}
+          pathTo={pathTo}/>} />
         <Route path="/boulders/:boulder" component={RouteSelection} />
       </Switch>
     </div>
@@ -18,6 +23,8 @@ const Shelf = ( {setRouteName, active, pathTo, boulderData} ) => {
 
 Shelf.propTypes = {
   active: PropTypes.number,
+  boulderData: PropTypes.object.isRequired,
+  setRouteName: PropTypes.func.isRequired,
 }
 
 Shelf.defaultProps = {

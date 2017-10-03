@@ -12,6 +12,7 @@ const Boulder = props => {
         highlightedHolds={props.routeInfo.highlightedHolds}
         routeName={props.routeInfo.routeName}
         setActive={props.routeInfo.setActive}
+        boulderData={props.boulderData}
       />
     </div>
   ) : <div id="boulder-container"><img src={boulderImg} alt="the-pearl" /></div>
@@ -23,7 +24,8 @@ Boulder.propTypes = {
     highlightedHolds: PropTypes.arrayOf(PropTypes.number),
     routeName: PropTypes.string,
     setActive: PropTypes.func.isRequired,
-  }).isRequired
+  }).isRequired,
+  boulderData: PropTypes.object.isRequired,
 }
 
 Boulder.defaultProps = {

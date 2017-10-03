@@ -2,6 +2,7 @@
   "the-pearl": {
     "routes": {
       "the pearl": {
+        "rating": "v5",
         "image names": ["hold-the-third-1.jpg", "start-hold.jpg", "start-hold-two-1.jpg",
         "sharp-jug-1.jpg", "match-this-2.jpg","bump-this-1.jpg", "top-out-1.jpg"],
         "beta": [
@@ -135,6 +136,7 @@
         ]
       },
       "clam bumper": {
+        "rating": "v3",
         "image names": ["hold-the-third-1.jpg", "start-hold.jpg", "start-hold-two-1.jpg",
         "sharp-jug-1.jpg", "match-this-2.jpg","bump-this-1.jpg", "top-out-1.jpg"],
         "beta": [

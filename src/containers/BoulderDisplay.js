@@ -112,18 +112,22 @@ export default class BoulderDisplay extends React.Component {
             routeName: this.state.routeName,
             setActive: this.setActive,
           }}
+          boulderData={boulderData}
         />
         <Shelf
           active={this.state.active}
           setRouteName={this.setRouteName}
           pathTo={this.pathToImages}
           boulderData={boulderData}
+          boulderName={this.state.boulderName}
+          boulderRoute={this.state.boulderRoute}
         />
         <Beta
           routeName={this.state.routeName}
           updateHighlights={this.highLightHolds}
           setActiveBeta={this.setActiveBeta}
           activeBeta={this.state.activeBeta}
+          boulderData={boulderData}
         />
       </main>
     )
