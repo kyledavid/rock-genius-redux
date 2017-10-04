@@ -13,7 +13,7 @@ class HoldDetail extends React.Component {
     const route = this.props.match.params.route
     const pathTo = this.props.pathTo()
     const hold = this.props.boulderData[boulder].routes[route].holds[this.props.active] || {}
-    alert('I rendered!')
+
     return (
       <div className="shelf-outer-wrapper">
         <aside id="detail-shelf">
