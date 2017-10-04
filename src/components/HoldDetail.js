@@ -10,7 +10,7 @@ class HoldDetail extends React.Component {
 
   render() {
     const boulder = this.props.boulderName
-    const route = this.props.match.params.route
+    const route = this.props.routeName
     const pathTo = this.props.pathTo()
     const hold = this.props.boulderData[boulder].routes[route].holds[this.props.active] || {}
 

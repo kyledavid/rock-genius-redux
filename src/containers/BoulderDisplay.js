@@ -134,7 +134,7 @@ class BoulderDisplay extends React.Component {
           pathTo={this.pathToImages}
           boulderData={boulderData}
           boulderName={this.state.boulderName}
-          boulderRoute={this.state.routeName}
+          routeName={this.state.routeName}
         />
         <Beta
           routeName={this.state.routeName}
