@@ -4,14 +4,14 @@ import { Route, Switch } from 'react-router'
 import HoldDetail from '../components/HoldDetail'
 import RouteSelection from './RouteSelection'
 
-const Shelf = ( {setRouteName, active, pathTo, boulderData, boulderName, boulderRoute} ) => {
+const Shelf = ( {setRouteName, active, pathTo, boulderData, boulderName, routeName} ) => {
   return (
     <div>
       <Switch>
         <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active}
           boulderData={boulderData}
           boulderName={boulderName}
-          boulderRoute={boulderRoute}
+          routeName={routeName}
           match={props.match}
           setRouteName={setRouteName}
           pathTo={pathTo}/>} />

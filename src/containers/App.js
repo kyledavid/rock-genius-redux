@@ -7,7 +7,7 @@ const App = () => (
   <BrowserRouter>
     <div>
       <Route exact path="/" component={BoulderSelection} />
-      <Route path="/boulders/:boulder" component={BoulderDisplay} />
+      <Route path="/boulders/:boulder/:routeName?" component={BoulderDisplay} />
     </div>
   </BrowserRouter>
 )

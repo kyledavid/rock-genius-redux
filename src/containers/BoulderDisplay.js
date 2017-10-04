@@ -1,13 +1,13 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
 import boulderData from '../utils/boulders.json'
 import { preLoadImages, formatBoulderName } from '../utils/helpers'
 
-export default class BoulderDisplay extends React.Component {
+class BoulderDisplay extends React.Component {
   constructor(props) {
     super(props)
 
@@ -37,6 +37,20 @@ export default class BoulderDisplay extends React.Component {
     if (this.state.routeName) {
       this.preCacheImages()
     }
+  }
+
+  componentWillMount() {
+    const {history} = this.props
+
+    this.unlisten = history.listen((location, action) => {
+      let routeName = location.pathname.slice(20)
+
+      this.setRouteName(routeName)
+    }).bind(this)
+  }
+
+  componentWillUnmount() {
+    this.unlisten()
   }
 
   setActiveBeta(active) {
@@ -120,7 +134,7 @@ export default class BoulderDisplay extends React.Component {
           pathTo={this.pathToImages}
           boulderData={boulderData}
           boulderName={this.state.boulderName}
-          boulderRoute={this.state.boulderRoute}
+          boulderRoute={this.state.routeName}
         />
         <Beta
           routeName={this.state.routeName}
@@ -133,3 +147,5 @@ export default class BoulderDisplay extends React.Component {
     )
   }
 }
+
+export default withRouter(BoulderDisplay)

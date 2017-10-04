@@ -4,16 +4,16 @@ import Descriptor from '../components/Descriptor'
 import RouteName from '../components/RouteName'
 
 class HoldDetail extends React.Component {
-  componentWillMount() {
-    const route = this.props.match.params.route
-    this.props.setRouteName(route)
+  componentWillUnmount() {
+    this.props.setRouteName(null)
   }
 
   render() {
-    const boulder = this.props.match.params.boulder
+    const boulder = this.props.boulderName
     const route = this.props.match.params.route
     const pathTo = this.props.pathTo()
     const hold = this.props.boulderData[boulder].routes[route].holds[this.props.active] || {}
+    alert('I rendered!')
     return (
       <div className="shelf-outer-wrapper">
         <aside id="detail-shelf">
