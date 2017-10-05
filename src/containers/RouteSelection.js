@@ -8,7 +8,7 @@ export default () => (
         <h1>Choose a Route</h1>
         <ul className="route-list">
           <li><Link to="/boulders/the-pearl/the pearl" >The Pearl</Link></li>
-          <li><Link to="/boulders/the-pearl/clam bumper" >Clam Bumper</Link></li>
+          <li><Link to="/boulders/the-pearl/the clam" >The Clam</Link></li>
         </ul>
       </div>
     </aside>
