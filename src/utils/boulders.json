@@ -139,69 +139,15 @@
         "rating": "v3",
         "image names": ["clam1.jpg", "clam2.jpg", "clam3.jpg",
         "clam4.jpg", "clam5.jpg","clam6.jpg"],
-        "beta": [
-          {
-            "chunk": "Start on the decent sidepull with your right hand, with your left on the polished and obvious pocket",
-            "activeHolds": [1,2]
-          },
-          {
-            "chunk": ". "
-          },
-          {
-            "chunk": "Make a high step to the chipped rail with your right foot",
-            "activeHolds": [0,1,2]
-          },
-          {
-            "chunk": ". "
-          },
-          {
-            "chunk": "Grab a higher up rail with your right hand and match",
-            "activeHolds": [0,3]
-          },
-          {
-            "chunk": ". "
-          },
-          {
-            "chunk": "Switch your feet and reach for a jug to your left",
-            "activeHolds": [0,3,4]
-          },
-          {
-            "chunk": ". "
-          },
-          {
-            "chunk": "Get your left foot in the starting pocket and grab a crimpy rail with your right",
-            "activeHolds": [2,4,5]
-          },
-          {
-            "chunk": ". "
-          },
-          {
-            "chunk": "High step again to the rail from before",
-            "activeHolds": [2,3,4,5]
-          },
-          {
-            "chunk": ". "
-          },
-          {
-            "chunk": "Crimp with your left in a large pocket",
-            "activeHolds": [2,3,5,6]
-          },
-          {
-            "chunk": " "
-          },
-          {
-            "chunk": "and bump your left up to the top out jugs.",
-            "activeHolds": [2,3,5,7]
-          }
-        ],
+        "beta": null,
         "holds": [
           {
             "position": {
               "bottom": "250px",
               "left": "505px"
             },
-            "desc": "Cracked Rail, former start hold. Use as foothold only.",
-            "foothold": true,
+            "desc": "Solid flake. Match on this",
+            "foothold": false,
             "pic": "clam1.jpg"
           },
           {
@@ -209,7 +155,7 @@
               "bottom": "290px",
               "left": "490px"
             },
-            "desc": "Crimpy Rail",
+            "desc": "Crimpy Sidepull",
             "foothold": false,
             "pic": "clam2.jpg"
           },
@@ -218,7 +164,7 @@
               "bottom": "325px",
               "left": "480px"
             },
-            "desc": "Crimpy Sidepull, new starting hold.",
+            "desc": "Left hand crimp.",
             "foothold": false,
             "pic": "clam2.jpg"
           },
@@ -227,8 +173,8 @@
               "bottom": "340px",
               "left": "520px"
             },
-            "desc": "A polished and shallow two finger pocket. The other starting hold.",
-            "foothold": true,
+            "desc": "Thin flake sidepull.",
+            "foothold": false,
             "pic": "clam3.jpg"
           },
           {
@@ -236,7 +182,7 @@
               "bottom": "260px",
               "left": "590px"
             },
-            "desc": "Crimpy Rail, match on this.",
+            "desc": "Wide flake. Used as foothold only.",
             "foothold": true,
             "pic": "clam4.jpg"
           },
@@ -245,7 +191,7 @@
               "bottom": "355px",
               "left": "422px"
             },
-            "desc": "Crimpy pocket, bump this to top left jug",
+            "desc": "Thin leanback",
             "foothold": false,
             "pic": "clam5.jpg"
           },
@@ -254,8 +200,8 @@
               "bottom": "435px",
               "left": "506px"
             },
-            "desc": "Sharp Jug",
-            "foothold": true,
+            "desc": "Solid topout jug.",
+            "foothold": false,
             "pic": "clam6.jpg"
           }
         ]
