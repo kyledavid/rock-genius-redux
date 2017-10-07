@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom'
 import Beta from '../components/Beta'
 import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
+import Footer from '../components/Footer'
 import boulderData from '../utils/boulders.json'
 import { preLoadImages, formatBoulderName } from '../utils/helpers'
 
@@ -142,6 +143,8 @@ class BoulderDisplay extends React.Component {
           setActiveBeta={this.setActiveBeta}
           activeBeta={this.state.activeBeta}
           boulderData={boulderData}
+        />
+        <Footer
         />
       </main>
     )
