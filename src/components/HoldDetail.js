@@ -4,7 +4,6 @@ import Descriptor from '../components/Descriptor'
 import RouteName from '../components/RouteName'
 
 class HoldDetail extends React.Component {
-
   render() {
     const boulder = this.props.boulderName
     const route = this.props.routeName

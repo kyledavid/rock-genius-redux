@@ -71,7 +71,9 @@ class BoulderDisplay extends React.Component {
   }
 
   highLightHolds(holdList, event) {
-    event.stopPropagation()
+    if (event) {
+      event.stopPropagation()
+    }
     this.setState(state => (
       {
         highlightedHolds: state.highlightedHolds === holdList ? [] : holdList,
@@ -129,11 +131,12 @@ class BoulderDisplay extends React.Component {
         />
         <Shelf
           active={this.state.active}
-          setRouteName={this.setRouteName}
           pathTo={this.pathToImages}
           boulderData={boulderData}
           boulderName={this.state.boulderName}
           routeName={this.state.routeName}
+          setActiveBeta={this.setActiveBeta}
+          updateHighlights={this.highLightHolds}
         />
         <Beta
           routeName={this.state.routeName}

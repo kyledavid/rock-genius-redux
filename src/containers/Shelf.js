@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router'
 import HoldDetail from '../components/HoldDetail'
 import RouteSelection from './RouteSelection'
 
-const Shelf = ( {setRouteName, active, pathTo, boulderData, boulderName, routeName} ) => {
+const Shelf = ( { active, pathTo, boulderData, boulderName, routeName, setActiveBeta, updateHighlights} ) => {
   return (
     <div>
       <Switch>
@@ -15,7 +15,8 @@ const Shelf = ( {setRouteName, active, pathTo, boulderData, boulderName, routeNa
           match={props.match}
           pathTo={pathTo}/>} />
         <Route path="/boulders/:boulder" render={(props) => <RouteSelection
-          setRouteName={setRouteName}
+          setActiveBeta={setActiveBeta}
+          updateHighlights={updateHighlights}
         />} />
       </Switch>
     </div>

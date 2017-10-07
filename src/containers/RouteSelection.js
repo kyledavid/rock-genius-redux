@@ -2,7 +2,10 @@ import React from 'react'
 import { BrowserRouter, Link, Route } from 'react-router-dom'
 
 class RouteSelection extends React.Component {
-
+  componentWillMount() {
+    this.props.setActiveBeta(null)
+    this.props.updateHighlights([])
+  }
 
   render() {
     return (
