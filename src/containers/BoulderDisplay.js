@@ -13,7 +13,7 @@ class BoulderDisplay extends React.Component {
     super(props)
 
     this.state = {
-      active: 1,
+      active: null,
       highlightedHolds: [],
       activeBeta: null,
       boulderName: '',
@@ -43,9 +43,9 @@ class BoulderDisplay extends React.Component {
   componentWillMount() {
     const {history} = this.props
 
+
     this.unlisten = history.listen((location, action) => {
       let routeName = location.pathname.slice(20)
-
       this.setRouteName(routeName)
     }).bind(this)
   }
@@ -54,10 +54,10 @@ class BoulderDisplay extends React.Component {
     this.unlisten()
   }
 
-  setActiveBeta(active) {
+  setActiveBeta(activeBeta) {
     this.setState(state => (
       {
-        activeBeta: state.activeBeta === active ? null : active,
+        activeBeta: state.activeBeta === activeBeta ? null : activeBeta,
       }),
     )
   }
@@ -82,14 +82,12 @@ class BoulderDisplay extends React.Component {
   setBoulderName(boulder) {
     this.setState({
       boulderName: boulder,
-      active: 1,
     })
   }
 
   setRouteName(route) {
     this.setState({
       routeName: route,
-      active: 1,
     })
   }
 

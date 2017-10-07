@@ -13,9 +13,10 @@ const Shelf = ( {setRouteName, active, pathTo, boulderData, boulderName, routeNa
           boulderName={boulderName}
           routeName={routeName}
           match={props.match}
-          setRouteName={setRouteName}
           pathTo={pathTo}/>} />
-        <Route path="/boulders/:boulder" component={RouteSelection} />
+        <Route path="/boulders/:boulder" render={(props) => <RouteSelection
+          setRouteName={setRouteName}
+        />} />
       </Switch>
     </div>
   )

@@ -1,6 +1,7 @@
-#beta a {
+#beta span {
   text-decoration: none;
   color: #000;
+  cursor: pointer;
   &.active {
     color: rgb(255,255,50);
   }

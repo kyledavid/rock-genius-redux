@@ -7,8 +7,7 @@ const Beta = props => {
     return (<div className="beta" id="beta">
       <h3>Problem Beta</h3>
       <p>
-        {props.boulderData["the-pearl"].routes[props.routeName].beta.map((chunk, index) => (<a
-          href="#beta"
+        {props.boulderData["the-pearl"].routes[props.routeName].beta.map((chunk, index) => (<span
           key={index}
           style={chunk.activeHolds ? { backgroundColor: '#eee' } : null}
           className={props.activeBeta === index ? 'selected-beta' : null}
@@ -17,7 +16,7 @@ const Beta = props => {
             props.setActiveBeta(index, e)
           }}
         >
-          {chunk.chunk}</a>),
+          {chunk.chunk}</span>),
         )}
       </p>
     </div>
