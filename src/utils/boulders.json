@@ -137,8 +137,8 @@
       },
       "the clam": {
         "rating": "v3",
-        "image names": ["hold-the-third-1.jpg", "start-hold.jpg", "start-hold-two-1.jpg",
-        "sharp-jug-1.jpg", "match-this-2.jpg","bump-this-1.jpg", "top-out-1.jpg"],
+        "image names": ["clam1.jpg", "clam2.jpg", "clam3.jpg",
+        "clam4.jpg", "clam5.jpg","clam6.jpg"],
         "beta": [
           {
             "chunk": "Start on the decent sidepull with your right hand, with your left on the polished and obvious pocket",
@@ -197,75 +197,66 @@
         "holds": [
           {
             "position": {
-              "bottom": "130px",
-              "left": "322px"
+              "bottom": "250px",
+              "left": "505px"
             },
             "desc": "Cracked Rail, former start hold. Use as foothold only.",
             "foothold": true,
-            "pic": "start-hold.jpg"
+            "pic": "clam1.jpg"
           },
           {
             "position": {
-              "bottom": "140px",
-              "left": "310px"
-            },
-            "desc": "Crimpy Sidepull, new starting hold.",
-            "foothold": false,
-            "pic": "start-hold.jpg"
-          },
-          {
-            "position": {
-              "bottom": "177px",
-              "left": "255px"
-            },
-            "desc": "A polished and shallow two finger pocket. The other starting hold.",
-            "foothold": true,
-            "pic": "start-hold-two-1.jpg"
-          },
-          {
-            "position": {
-              "bottom": "270px",
-              "left": "312px"
-            },
-            "desc": "Crimpy Rail, match on this.",
-            "foothold": true,
-            "pic": "hold-the-third-1.jpg"
-          },
-          {
-            "position": {
-              "bottom": "330px",
-              "left": "252px"
-            },
-            "desc": "Sharp Jug",
-            "foothold": true,
-            "pic": "sharp-jug-1.jpg"
-          },
-          {
-            "position": {
-              "bottom": "364px",
-              "left": "273px"
+              "bottom": "290px",
+              "left": "490px"
             },
             "desc": "Crimpy Rail",
             "foothold": false,
-            "pic": "match-this-2.jpg"
+            "pic": "clam2.jpg"
           },
           {
             "position": {
-              "bottom": "395px",
-              "left": "252px"
+              "bottom": "325px",
+              "left": "480px"
+            },
+            "desc": "Crimpy Sidepull, new starting hold.",
+            "foothold": false,
+            "pic": "clam2.jpg"
+          },
+          {
+            "position": {
+              "bottom": "340px",
+              "left": "520px"
+            },
+            "desc": "A polished and shallow two finger pocket. The other starting hold.",
+            "foothold": true,
+            "pic": "clam3.jpg"
+          },
+          {
+            "position": {
+              "bottom": "260px",
+              "left": "590px"
+            },
+            "desc": "Crimpy Rail, match on this.",
+            "foothold": true,
+            "pic": "clam4.jpg"
+          },
+          {
+            "position": {
+              "bottom": "355px",
+              "left": "422px"
             },
             "desc": "Crimpy pocket, bump this to top left jug",
             "foothold": false,
-            "pic": "bump-this-1.jpg"
+            "pic": "clam5.jpg"
           },
           {
             "position": {
-              "bottom": "425px",
-              "left": "252px"
+              "bottom": "435px",
+              "left": "506px"
             },
-            "desc": "Jug Topout",
-            "foothold": false,
-            "pic": "top-out-1.jpg"
+            "desc": "Sharp Jug",
+            "foothold": true,
+            "pic": "clam6.jpg"
           }
         ]
       }
