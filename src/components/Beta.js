@@ -3,7 +3,7 @@ import React from 'react'
 import Boulders from '../utils/boulders.json'
 
 const Beta = props => {
-  if (props.routeName) {
+  if (props.routeName && props.boulderData["the-pearl"].routes[props.routeName].beta) {
     return (<div className="beta" id="beta">
       <h3>Problem Beta</h3>
       <p>
