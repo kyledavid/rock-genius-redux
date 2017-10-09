@@ -38,6 +38,7 @@ class HoldDetail extends React.Component {
               pic={hold.pic}
             />
             <Descriptor
+              active={this.props.active !== null}
               description={hold.desc}
               isFoot={hold.foothold}
             />

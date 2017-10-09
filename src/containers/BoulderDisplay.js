@@ -100,11 +100,6 @@ class BoulderDisplay extends React.Component {
         />
         <Shelf
           active={this.state.active}
-          boulderData={boulderData}
-          boulderName={this.props.match.params.boulder}
-          routeName={this.props.match.params.routeName}
-          setActiveBeta={this.setActiveBeta}
-          updateHighlights={this.highLightHolds}
         />
         <Beta
           routeName={this.props.match.params.routeName}
