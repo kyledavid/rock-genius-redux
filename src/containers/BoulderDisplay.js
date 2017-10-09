@@ -6,7 +6,7 @@ import Boulder from '../components/Boulder'
 import Shelf from './Shelf'
 import Footer from '../components/Footer'
 import boulderData from '../utils/boulders.json'
-import { preLoadImages, formatBoulderName } from '../utils/helpers'
+import { preLoadImages, formatBoulderName, pathToImages } from '../utils/helpers'
 
 class BoulderDisplay extends React.Component {
   constructor(props) {
@@ -24,29 +24,14 @@ class BoulderDisplay extends React.Component {
     this.highLightHolds = this.highLightHolds.bind(this)
     this.setActiveBeta = this.setActiveBeta.bind(this)
     this.setBoulderName = this.setBoulderName.bind(this)
-    this.setRouteName = this.setRouteName.bind(this)
-    this.pathToImages = this.pathToImages.bind(this)
-    this.preCacheImages = this.preCacheImages.bind(this)
-  }
-
-  componentDidMount() {
-    const boulder = this.props.match.params.boulder
-    this.setBoulderName(boulder)
-  }
-
-  componentDidUpdate() {
-    if (this.state.routeName) {
-      this.preCacheImages()
-    }
+    this.resetBeta = this.resetBeta.bind(this)
   }
 
   componentWillMount() {
     const {history} = this.props
 
-
     this.unlisten = history.listen((location, action) => {
-      let routeName = location.pathname.slice(20)
-      this.setRouteName(routeName)
+      this.resetBeta()
     }).bind(this)
   }
 
@@ -54,6 +39,12 @@ class BoulderDisplay extends React.Component {
     this.unlisten()
   }
 
+  resetBeta() {
+    this.setState({
+      activeBeta: null,
+      highlightedHolds: [],
+    })
+  }
   setActiveBeta(activeBeta) {
     this.setState(state => (
       {
@@ -87,27 +78,6 @@ class BoulderDisplay extends React.Component {
     })
   }
 
-  setRouteName(route) {
-    this.setState({
-      routeName: route,
-    })
-  }
-
-  pathToImages() {
-    const boulderName = this.state.boulderName
-    const routeName = this.state.routeName
-    const path = boulderName + '/' + routeName + '/'
-
-    return path
-  }
-
-  preCacheImages() {
-    const boulderName = this.state.boulderName
-    const route = this.state.routeName
-    const path = this.pathToImages(route)
-    preLoadImages(boulderData[boulderName].routes[route]["image names"], path)
-  }
-
   render() {
     let boulderName = formatBoulderName(this.props.match.params.boulder)
     return (
@@ -115,7 +85,6 @@ class BoulderDisplay extends React.Component {
         className="container"
         onClick={(e) => this.setActive(null, e)}
       >
-
         <h1>
           <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link>
           <span className="rock-name">{boulderName}</span>
@@ -124,22 +93,21 @@ class BoulderDisplay extends React.Component {
           routeInfo={{
             activeHold: this.state.active,
             highlightedHolds: this.state.highlightedHolds,
-            routeName: this.state.routeName,
+            routeName: this.props.match.params.routeName,
             setActive: this.setActive,
           }}
           boulderData={boulderData}
         />
         <Shelf
           active={this.state.active}
-          pathTo={this.pathToImages}
           boulderData={boulderData}
-          boulderName={this.state.boulderName}
-          routeName={this.state.routeName}
+          boulderName={this.props.match.params.boulder}
+          routeName={this.props.match.params.routeName}
           setActiveBeta={this.setActiveBeta}
           updateHighlights={this.highLightHolds}
         />
         <Beta
-          routeName={this.state.routeName}
+          routeName={this.props.match.params.routeName}
           updateHighlights={this.highLightHolds}
           setActiveBeta={this.setActiveBeta}
           activeBeta={this.state.activeBeta}

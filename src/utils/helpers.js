@@ -15,9 +15,16 @@ export const preLoadImages = (imageNames, path) => {
   })
 }
 
+// formats boulder name to with capital letters
 export const formatBoulderName = (unformattedName) => {
   let formattedName = unformattedName.split(/-|\s/g)
   return formattedName.map(word => {
     return word.charAt(0).toUpperCase() + word.slice(1)
   }).join(' ')
+}
+
+// returns path to images folder giver boulder and route string
+export const pathToImages = (boulderName, routeName) => {
+  const path = `${boulderName}/${routeName}/`
+  return path
 }

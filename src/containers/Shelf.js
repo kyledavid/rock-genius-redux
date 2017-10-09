@@ -8,12 +8,9 @@ const Shelf = ( { active, pathTo, boulderData, boulderName, routeName, setActive
   return (
     <div>
       <Switch>
-        <Route path="/boulders/:boulder/:route" render={(props) => <HoldDetail active={active}
-          boulderData={boulderData}
-          boulderName={boulderName}
-          routeName={routeName}
-          match={props.match}
-          pathTo={pathTo}/>} />
+        <Route path="/boulders/:boulder/:routeName" render={(props) => <HoldDetail
+          active={active}
+          match={props.match} />} />
         <Route path="/boulders/:boulder" render={(props) => <RouteSelection
           setActiveBeta={setActiveBeta}
           updateHighlights={updateHighlights}
@@ -26,7 +23,6 @@ const Shelf = ( { active, pathTo, boulderData, boulderName, routeName, setActive
 Shelf.propTypes = {
   active: PropTypes.number,
   boulderData: PropTypes.object.isRequired,
-  setRouteName: PropTypes.func.isRequired,
 }
 
 Shelf.defaultProps = {

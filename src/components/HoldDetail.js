@@ -2,13 +2,27 @@ import React from 'react'
 import Zoompic from '../components/Zoompic'
 import Descriptor from '../components/Descriptor'
 import RouteName from '../components/RouteName'
+import { pathToImages, preLoadImages } from '../utils/helpers'
+import boulderData from '../utils/boulders.json'
 
 class HoldDetail extends React.Component {
+  componentWillMount() {
+    this.preCacheImages()
+  }
+
+  preCacheImages() {
+    const boulderName = this.props.match.params.boulder
+    const routeName = this.props.match.params.routeName
+    const path = pathToImages(boulderName, routeName)
+    preLoadImages(boulderData[boulderName].routes[routeName]["image names"], path)
+  }
+
+
   render() {
-    const boulder = this.props.boulderName
-    const route = this.props.routeName
-    const pathTo = this.props.pathTo()
-    const hold = this.props.boulderData[boulder].routes[route].holds[this.props.active] || {}
+    const boulder = this.props.match.params.boulder
+    const route = this.props.match.params.routeName
+    const pathTo = pathToImages(boulder, route)
+    const hold = boulderData[boulder].routes[route].holds[this.props.active] || {}
 
     return (
       <div className="shelf-outer-wrapper">
@@ -16,7 +30,7 @@ class HoldDetail extends React.Component {
           <RouteName
             routeName={route}
             boulderName={boulder}
-            boulderData={this.props.boulderData}
+            boulderData={boulderData}
           />
           <div className="shelf-inner-wrapper">
             <Zoompic
