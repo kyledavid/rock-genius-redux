@@ -1,17 +1,17 @@
 import C from '../constants'
 import { combineReducers } from 'redux'
 
-export const boulderName = (state, action) =>
+export const boulderName = (state=null, action) =>
   (action.type === C.SELECT_BOULDER) ?
     action.payload :
     state
 
-export const routeName = (state, action) =>
+export const routeName = (state=null, action) =>
   (action.type === C.SELECT_ROUTE) ?
   action.payload :
   state
 
-export const activeHold = (state, action) => {
+export const activeHold = (state=null, action) => {
   switch(action.type) {
     case C.SELECT_ROUTE :
       return null
@@ -24,12 +24,20 @@ export const activeHold = (state, action) => {
   }
 }
 
-export const fetching = (state, action) => {
-  return "finish this later"
+export const activeBeta = (state=null, action) => {
+  return state
 }
 
-export const routeData = (state, action) => {
-  return "finish this later"
+export const fetching = (state=false, action) => {
+  return false
+}
+
+export const routeData = (state=[], action) => {
+  return {
+    holdPositions: [],
+    beta: [],
+    imageNames: []
+  }
 }
 
 export default combineReducers({

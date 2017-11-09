@@ -1,12 +1,11 @@
 {
-  "boulder-name": "the pearl",
-  "boulder-route": "clam bumper",
-  "active-hold": 1,
-  "highlightedHolds": [1,3,4],
-  "active-beta": 3,
-  "route-data" : {
-    "fetching": false,
-    "hold positions": [[33, 100], [47, 848]],
+  "boulderName": "the pearl",
+  "routeName": "clam bumper",
+  "activeHold": 1,
+  "activeBeta": 3,
+  "fetching": false,
+  "routeData" : {
+    "hold-positions": [[33, 100], [47, 848]],
     "beta": [
       {"beta-text": "blablabla", "beta-holds": [1,2,3]},
       {"beta-text": "blablabla", "beta-holds": [1,5,7]},

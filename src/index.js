@@ -12,4 +12,6 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 const store = storeFactory(initialState)
 
+console.log(initialState)
+
 window.store = store
