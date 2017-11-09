@@ -32,12 +32,8 @@ export const fetching = (state=false, action) => {
   return false
 }
 
-export const routeData = (state=[], action) => {
-  return {
-    holdPositions: [],
-    beta: [],
-    imageNames: []
-  }
+export const routeData = (state={}, action) => {
+  return state
 }
 
 export default combineReducers({

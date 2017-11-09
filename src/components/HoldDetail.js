@@ -1,7 +1,7 @@
 import React from 'react'
 import Zoompic from '../components/Zoompic'
 import Descriptor from '../components/Descriptor'
-import RouteName from '../components/RouteName'
+import RouteName from '../new-containers/RouteName'
 import { pathToImages, preLoadImages } from '../utils/helpers'
 import boulderData from '../utils/boulders.json'
 

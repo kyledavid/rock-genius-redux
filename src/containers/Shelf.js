@@ -19,7 +19,6 @@ const Shelf = ( { active } ) => {
 
 Shelf.propTypes = {
   active: PropTypes.number,
-  boulderData: PropTypes.object.isRequired,
 }
 
 Shelf.defaultProps = {

@@ -5,6 +5,7 @@
   "activeBeta": 3,
   "fetching": false,
   "routeData" : {
+    "rating": "V3",
     "hold-positions": [[33, 100], [47, 848]],
     "beta": [
       {"beta-text": "blablabla", "beta-holds": [1,2,3]},

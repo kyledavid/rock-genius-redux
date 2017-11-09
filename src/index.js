@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import 'normalize.css'
 import App from './containers/App'
@@ -8,10 +9,12 @@ import '../node_modules/font-awesome/css/font-awesome.min.css'
 import initialState from '../data-model.json'
 import storeFactory from './store'
 
-ReactDOM.render(<App />, document.getElementById('app'))
 
 const store = storeFactory(initialState)
 
-console.log(initialState)
-
 window.store = store
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, document.getElementById('app'))
