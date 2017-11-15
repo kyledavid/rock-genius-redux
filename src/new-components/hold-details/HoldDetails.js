@@ -1,11 +1,11 @@
 import React from 'react'
-import Zoompic from '../components/Zoompic'
-import Descriptor from '../components/Descriptor'
-import BoulderRouteTitle from '../new-containers/BoulderRouteTitle'
-import { pathToImages, preLoadImages } from '../utils/helpers'
-import boulderData from '../utils/boulders.json'
+import HoldPic from './HoldPic'
+import HoldDescription from './HoldDescription'
+import BoulderRouteTitle from './BoulderRouteTitle'
+import { pathToImages, preLoadImages } from '../../utils/helpers'
+import boulderData from '../../utils/boulders.json'
 
-class HoldDetail extends React.Component {
+class HoldDetails extends React.Component {
   componentWillMount() {
     this.preCacheImages()
   }
@@ -33,11 +33,11 @@ class HoldDetail extends React.Component {
             boulderData={boulderData}
           />
           <div className="shelf-inner-wrapper">
-            <Zoompic
+            <HoldPic
               pathTo={pathTo}
               pic={hold.pic}
             />
-            <Descriptor
+            <HoldDescription
               active={this.props.active !== null}
               description={hold.desc}
               isFoot={hold.foothold}
@@ -49,4 +49,4 @@ class HoldDetail extends React.Component {
   }
 }
 
-export default HoldDetail
+export default HoldDetails

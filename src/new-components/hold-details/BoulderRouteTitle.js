@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
-import {formatBoulderName} from '../utils/helpers'
+import {formatBoulderName} from '../../utils/helpers'
 
-const RouteName = ({routeName, boulderName, boulderData, rating, changeRoute}) => {
+const BoulderRouteTitle = ({routeName, boulderName, boulderData, rating, changeRoute}) => {
   let route = formatBoulderName(routeName)
 
   return (
@@ -15,10 +15,10 @@ const RouteName = ({routeName, boulderName, boulderData, rating, changeRoute}) =
   )
 }
 
-RouteName.propTypes = {
+BoulderRouteTitle.propTypes = {
   routeName: PropTypes.string.isRequired,
   boulderName: PropTypes.string.isRequired,
   rating: PropTypes.string.isRequired
 }
 
-export default RouteName
+export default BoulderRouteTitle

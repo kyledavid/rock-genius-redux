@@ -9,7 +9,6 @@ export const selectBoulder = (boulderName='the girl') => {
 }
 
 export const selectRoute = (routeName='the girl') => {
-  console.log('thangs happed')
   return {
     type: C.SELECT_ROUTE,
     payload: routeName

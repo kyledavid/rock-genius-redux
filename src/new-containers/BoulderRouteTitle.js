@@ -1,4 +1,4 @@
-import RouteName from '../new-components/RouteName'
+import BoulderRouteTitle from '../new-components/hold-details/BoulderRouteTitle'
 import { connect } from 'react-redux'
 import { selectRoute } from '../actions'
 
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
   boulderName: state.boulderName
 })
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     changeRoute(name) {
       dispatch(
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RouteName)
+export default connect(mapStateToProps, mapDispatchToProps)(BoulderRouteTitle)

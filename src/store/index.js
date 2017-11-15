@@ -1,7 +1,7 @@
 import reducer from './reducers'
 import { applyMiddleware, createStore } from 'redux'
 
-const fakeMiddleware = store => next => action => {
+const placeholderMiddleware = store => next => action => {
   let result
   console.log('sup bro')
   result = next(action)
@@ -10,5 +10,5 @@ const fakeMiddleware = store => next => action => {
 }
 
 export default (initialState={}) => {
-  return applyMiddleware(fakeMiddleware)(createStore)(reducer, initialState)
+  return applyMiddleware(placeholderMiddleware)(createStore)(reducer, initialState)
 }
