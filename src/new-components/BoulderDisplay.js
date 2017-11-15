@@ -29,7 +29,6 @@ class BoulderDisplay extends React.Component {
 
   componentWillMount() {
     const { history } = this.props
-    const { listen }
 
     this.unlisten = history.listen((location, action) => {
       this.resetBeta()
@@ -42,7 +41,9 @@ class BoulderDisplay extends React.Component {
   }
 
   changeRoute() {
-    
+    const { boulder } = this.props.match.params
+    const { changeRoute } = this.props
+    changeRoute(boulder)
   }
 
   resetBeta() {

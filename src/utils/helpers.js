@@ -25,6 +25,7 @@ export const formatBoulderName = (unformattedName) => {
 
 // returns path to images folder giver boulder and route string
 export const pathToImages = (boulderName, routeName) => {
-  const path = `${boulderName}/${routeName}/`
+  const hyphenatedBoulder = boulderName.replace(/\s/, '-')
+  const path = `${hyphenatedBoulder}/${routeName}/`
   return path
 }

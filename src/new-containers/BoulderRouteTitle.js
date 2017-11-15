@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
   boulderName: state.boulderName
 })
 
-const mapDispatchToProps = dispatch => {
+/*const mapDispatchToProps = dispatch => {
   return {
     changeRoute(name) {
       dispatch(
@@ -16,6 +16,14 @@ const mapDispatchToProps = dispatch => {
       )
     }
   }
-}
+}*/
+
+const mapDispatchToProps = dispatch => ({
+  changeRoute(name) {
+    dispatch(
+      selectRoute(name)
+    )
+  }
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoulderRouteTitle)

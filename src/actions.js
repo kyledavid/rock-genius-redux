@@ -8,7 +8,7 @@ export const selectBoulder = (boulderName='the girl') => {
   }
 }
 
-export const selectRoute = (routeName='the girl') => {
+export const selectRoute = (routeName) => {
   return {
     type: C.SELECT_ROUTE,
     payload: routeName

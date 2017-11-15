@@ -1,7 +1,7 @@
 import React from 'react'
 import HoldPic from './HoldPic'
 import HoldDescription from './HoldDescription'
-import BoulderRouteTitle from './BoulderRouteTitle'
+import BoulderRouteTitle from '../../new-containers/BoulderRouteTitle'
 import { pathToImages, preLoadImages } from '../../utils/helpers'
 import boulderData from '../../utils/boulders.json'
 

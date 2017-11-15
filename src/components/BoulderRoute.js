@@ -4,7 +4,7 @@ import Hold from './Hold'
 
 const BoulderRoute = ({activeHold, boulderData, highlightedHolds, routeName, setActive}) => (
   <div className="route">
-    {boulderData["the-pearl"].routes[routeName].holds.map((hold, index) => {
+    {boulderData["the pearl"].routes[routeName].holds.map((hold, index) => {
       const highlighted = highlightedHolds.includes(index)
       return (
         <Hold
