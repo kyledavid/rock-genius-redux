@@ -2,7 +2,7 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import { Link, withRouter } from 'react-router-dom'
 import Beta from '../components/Beta'
-import Boulder from '../components/Boulder'
+import BoulderImage from '../new-containers/BoulderImage'
 import Shelf from '../new-containers/Shelf'
 import Footer from '../components/Footer'
 import boulderData from '../utils/boulders.json'
@@ -27,12 +27,20 @@ class BoulderDisplay extends React.Component {
     this.resetBeta = this.resetBeta.bind(this)
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { routeName } = nextProps.match.params
+    const { changeRoute } = this.props
+
+    if(routeName){changeRoute(routeName)}
+  }
+
   componentWillMount() {
     const { history } = this.props
 
     this.unlisten = history.listen((location, action) => {
+      console.log('sup bro')
       this.resetBeta()
-      this.changeRoute()
+      //this.changeRoute()
     }).bind(this)
   }
 
@@ -41,9 +49,9 @@ class BoulderDisplay extends React.Component {
   }
 
   changeRoute() {
-    const { boulder } = this.props.match.params
+    const { routeName } = this.props.match.params
     const { changeRoute } = this.props
-    changeRoute(boulder)
+    if(routeName){changeRoute(routeName)}
   }
 
   resetBeta() {
@@ -97,7 +105,7 @@ class BoulderDisplay extends React.Component {
           <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link>
           <span className="rock-name">{boulderName}</span>
         </h1>
-        <Boulder
+        <BoulderImage
           routeInfo={{
             activeHold: this.state.active,
             highlightedHolds: this.state.highlightedHolds,

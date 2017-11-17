@@ -25,7 +25,14 @@ export const activeHold = (state=null, action) => {
 }
 
 export const activeBeta = (state=null, action) => {
-  return state
+  switch(action.type) {
+    case C.SELECT_BETA :
+      return action.payload
+    case C.RESET_BETA :
+      return null
+    default :
+      return state
+  }
 }
 
 export const fetching = (state=false, action) => {
