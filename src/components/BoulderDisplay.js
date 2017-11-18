@@ -3,7 +3,7 @@ import FontAwesome from 'react-fontawesome'
 import { Link, withRouter } from 'react-router-dom'
 import Beta from '../components/Beta'
 import BoulderImage from '../containers/BoulderImage'
-import Shelf from '../containers/Shelf'
+import Shelf from '../components/Shelf'
 import Footer from './Footer'
 import boulderData from '../utils/boulders.json'
 import { preLoadImages, formatBoulderName, pathToImages } from '../utils/helpers'
@@ -115,7 +115,9 @@ class BoulderDisplay extends React.Component {
           }}
           boulderData={boulderData}
         />
-        <Shelf />
+        <Shelf
+          activeHold={this.state.active}
+        />
         <Beta
           routeName={this.props.match.params.routeName}
           updateHighlights={this.highLightHolds}
