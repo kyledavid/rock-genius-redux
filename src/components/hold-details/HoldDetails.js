@@ -13,7 +13,8 @@ class HoldDetails extends React.Component {
   preCacheImages() {
     const { boulderName, routeName, routeData } = this.props
     const path = pathToImages(boulderName, routeName)
-    preLoadImages(routeData["image names"], path)
+    const imageNames = routeData["image names"]
+    preLoadImages(imageNames, path)
   }
 
   render() {
@@ -27,7 +28,6 @@ class HoldDetails extends React.Component {
           <BoulderRouteTitle
             routeName={routeName}
             boulderName={boulderName}
-            boulderData={boulderData}
           />
           <div className="shelf-inner-wrapper">
             <HoldPic
@@ -35,7 +35,7 @@ class HoldDetails extends React.Component {
               pic={hold.pic}
             />
             <HoldDescription
-              activeHold={this.props.activeHold}
+              activeHold={activeHold}
               description={hold.desc}
               isFoot={hold.foothold}
             />
