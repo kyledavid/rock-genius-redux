@@ -1,4 +1,5 @@
 import C from './constants'
+import boulderData from './utils/boulders.json'
 
 export const selectBoulder = (boulderName='the girl') => {
   return {
@@ -18,5 +19,14 @@ export const selectHold = (index) => {
   return {
     type: C.SELECT_HOLD,
     payload: index
+  }
+}
+
+export const fetchRouteData = (routeName) => {
+  let routeData = boulderData['the pearl']['routes'][routeName]
+
+  return {
+    type: C.CHANGE_ROUTE_DATA,
+    payload: routeData
   }
 }

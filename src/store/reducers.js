@@ -1,5 +1,6 @@
 import C from '../constants'
 import { combineReducers } from 'redux'
+import boulderData from '../utils/boulders.json'
 
 export const boulderName = (state=null, action) =>
   (action.type === C.SELECT_BOULDER) ?
@@ -30,6 +31,10 @@ export const activeBeta = (state=null, action) => {
       return action.payload
     case C.RESET_BETA :
       return null
+    case C.SELECT_ROUTE :
+      return null
+    case C.SELECT_BOULDER :
+      return null
     default :
       return state
   }
@@ -40,7 +45,13 @@ export const fetching = (state=false, action) => {
 }
 
 export const routeData = (state={}, action) => {
-  return state
+  switch(action.type) {
+    case C.CHANGE_ROUTE_DATA :
+      return action.payload
+    default :
+      return state
+  }
+  return routeData ? routeData : state
 }
 
 export default combineReducers({

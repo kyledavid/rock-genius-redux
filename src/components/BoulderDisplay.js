@@ -29,8 +29,9 @@ class BoulderDisplay extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { routeName } = nextProps.match.params
-    const { changeRoute } = this.props
+    const { changeRoute, fetchRouteData } = this.props
 
+    if(routeName && routeName !== this.props.routeName){fetchRouteData(routeName)}
     if(routeName){changeRoute(routeName)}
   }
 
