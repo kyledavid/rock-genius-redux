@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import BoulderRoute from '../new-components/BoulderRoute'
-import selectHold from '../actions'
+import { selectHold } from '../actions'
 
 const mapStateToProps = ({boulderName, routeName, activeHold}) => ({
   boulderName,
@@ -10,7 +10,8 @@ const mapStateToProps = ({boulderName, routeName, activeHold}) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-   selectHold(index) {
+   selectHold(index, event) {
+     event.stopPropagation()
      dispatch(
        selectHold(index)
      )

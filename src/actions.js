@@ -14,8 +14,7 @@ export const selectRoute = (routeName) => {
   }
 }
 
-export const selectHold = (index, event) => {
-  event.stopPropagation()
+export const selectHold = (index) => {
   return {
     type: C.SELECT_HOLD,
     payload: index
