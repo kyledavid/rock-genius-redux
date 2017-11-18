@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import BoulderImage from '../components/BoulderImage'
 
-const mapStateToProps = (state) => {
-  return null
-}
+const mapStateToProps = ({ routeName }) => ({
+  routeName,
+})
 
 const mapDispatchToProps = (dispatch) => {
   return null
 }
 
-export default connect(null, null)(BoulderImage)
+export default connect(mapStateToProps)(BoulderImage)

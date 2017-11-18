@@ -7,10 +7,16 @@ export const boulderName = (state=null, action) =>
     action.payload :
     state
 
-export const routeName = (state=null, action) =>
-  (action.type === C.SELECT_ROUTE) ?
-  action.payload :
-  state
+export const routeName = (state=null, action) => {
+  switch(action.type) {
+    case C.SELECT_ROUTE :
+      return action.payload
+    case C.CLEAR_ROUTE :
+      return null
+    default :
+      return state
+  }
+}
 
 export const activeHold = (state=null, action) => {
   switch(action.type) {

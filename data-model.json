@@ -1,6 +1,6 @@
 {
   "boulderName": "the pearl",
-  "routeName": "clam bumper",
+  "routeName": null,
   "activeHold": 1,
   "activeBeta": 3,
   "fetching": false,

@@ -4,13 +4,10 @@ import BoulderRoute from '../containers/BoulderRoute'
 import boulderImg from '../img/boulders/the-pearl/pearl.jpg'
 
 const BoulderImage = props => {
-  return props.routeInfo.routeName ? (
+  return props.routeName ? (
     <div id="boulder-container">
       <img src={boulderImg} alt="the-pearl" />
-      <BoulderRoute
-        highlightedHolds={props.routeInfo.highlightedHolds}
-        boulderData={props.boulderData}
-      />
+      <BoulderRoute />
     </div>
   ) : <div id="boulder-container"><img src={boulderImg} alt="the-pearl" /></div>
 }

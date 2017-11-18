@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import BoulderRoute from '../components/BoulderRoute'
 import { selectHold } from '../actions'
 
-const mapStateToProps = ({boulderName, routeName, activeHold}) => ({
+const mapStateToProps = ({ activeHold, boulderName, routeName, routeData }) => ({
+  activeHold,
   boulderName,
+  routeData,
   routeName,
-  activeHold
 })
 
 const mapDispatchToProps = (dispatch) => ({

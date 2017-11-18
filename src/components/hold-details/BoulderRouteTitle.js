@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { formatBoulderName } from '../../utils/helpers'
 
 const BoulderRouteTitle = ({routeName, boulderName, boulderData, rating}) => {
-  let route = formatBoulderName(routeName)
+  let route = routeName ? formatBoulderName(routeName) : 'poop'
 
   return (
     <div className="boulder-name">

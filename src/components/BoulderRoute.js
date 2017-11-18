@@ -2,9 +2,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Hold from './Hold'
 
-const BoulderRoute = ({ boulderData, highlightedHolds, activeHold, boulderName, routeName, selectHold }) => (
+const BoulderRoute = ({ activeBeta, activeHold, boulderName, routeName, routeData, selectHold }) => (
   <div className="route">
-    {boulderData["the pearl"].routes[routeName].holds.map((hold, index) => {
+    {routeData ? routeData.holds.map((hold, index) => {
+      const highlightedHolds = routeData['beta'][activeBeta]['activeHolds']
       const highlighted = highlightedHolds.includes(index)
       return (
         <Hold
@@ -15,7 +16,7 @@ const BoulderRoute = ({ boulderData, highlightedHolds, activeHold, boulderName, 
           setActive={selectHold.bind(null, index)}
         />
       )
-    })}
+    }) : null}
   </div>
 )
 
@@ -25,10 +26,10 @@ BoulderRoute.propTypes = {
   boulderName: PropTypes.string.isRequired,
   routeName: PropTypes.string.isRequired,
   selectHold: PropTypes.func.isRequired,
-  boulderData: PropTypes.object.isRequired,
 }
 
 BoulderRoute.defaultProps = {
+  activeBeta: 0,
   activeHold: null,
   highlightedHolds: null,
 }

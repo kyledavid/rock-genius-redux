@@ -29,10 +29,11 @@ class BoulderDisplay extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { routeName } = nextProps.match.params
-    const { changeRoute, fetchRouteData } = this.props
+    const { changeRoute, clearRoute, fetchRouteData } = this.props
 
     if(routeName && routeName !== this.props.routeName){fetchRouteData(routeName)}
     if(routeName){changeRoute(routeName)}
+    if(this.props.routeName && !routeName){this.props.clearRoute()}
   }
 
   componentWillMount() {
@@ -114,9 +115,7 @@ class BoulderDisplay extends React.Component {
           }}
           boulderData={boulderData}
         />
-        <Shelf
-          active={this.state.active}
-        />
+        <Shelf />
         <Beta
           routeName={this.props.match.params.routeName}
           updateHighlights={this.highLightHolds}
