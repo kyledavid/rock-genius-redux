@@ -11,24 +11,22 @@ class HoldDetails extends React.Component {
   }
 
   preCacheImages() {
-    const boulderName = this.props.boulderName
-    const routeName = this.props.routeName
+    const { boulderName, routeName, routeData } = this.props
     const path = pathToImages(boulderName, routeName)
-    preLoadImages(boulderData[boulderName].routes[routeName]["image names"], path)
+    preLoadImages(routeData["image names"], path)
   }
 
   render() {
-    const boulder = this.props.boulderName
-    const route = this.props.routeName
-    const pathTo = pathToImages(boulder, route)
-    const hold = boulderData[boulder].routes[route].holds[this.props.activeHold] || {}
+    const { activeHold, boulderName, routeName, routeData } = this.props
+    const pathTo = pathToImages(boulderName, routeName)
+    const hold = routeData['holds'][activeHold] || {}
 
     return (
       <div className="shelf-outer-wrapper">
         <aside id="detail-shelf">
           <BoulderRouteTitle
-            routeName={route}
-            boulderName={boulder}
+            routeName={routeName}
+            boulderName={boulderName}
             boulderData={boulderData}
           />
           <div className="shelf-inner-wrapper">

@@ -39,7 +39,6 @@ class BoulderDisplay extends React.Component {
     const { history } = this.props
 
     this.unlisten = history.listen((location, action) => {
-      console.log('sup bro')
       this.resetBeta()
       //this.changeRoute()
     }).bind(this)

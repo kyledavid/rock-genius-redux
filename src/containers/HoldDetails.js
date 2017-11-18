@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 const mapStateToProps = (state, props) => {
   return {
     activeHold: state.activeHold,
-    boulderData: props.match,
+    routeData: state.routeData,
     boulderName: state.boulderName,
     routeName: state.routeName
   }
