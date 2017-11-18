@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Link, Route, withRouter } from 'react-router-dom'
 import BoulderSelection from './BoulderSelection'
-import BoulderDisplay from '../new-containers/BoulderDisplay'
+import BoulderDisplay from '../containers/BoulderDisplay'
 
 const App = () => (
   <BrowserRouter>

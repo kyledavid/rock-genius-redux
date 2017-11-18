@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Route, Switch } from 'react-router'
-import HoldDetail from './HoldDetails'
-import RouteSelection from './RouteSelection'
+import HoldDetails from './HoldDetails'
+import RouteSelection from '../components/RouteSelection'
 
 const Shelf = ( { active } ) => {
   return (

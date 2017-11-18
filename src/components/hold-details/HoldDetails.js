@@ -1,7 +1,7 @@
 import React from 'react'
 import HoldPic from './HoldPic'
 import HoldDescription from './HoldDescription'
-import BoulderRouteTitle from '../../new-containers/BoulderRouteTitle'
+import BoulderRouteTitle from '../../containers/BoulderRouteTitle'
 import { pathToImages, preLoadImages } from '../../utils/helpers'
 import boulderData from '../../utils/boulders.json'
 
@@ -11,18 +11,17 @@ class HoldDetails extends React.Component {
   }
 
   preCacheImages() {
-    const boulderName = this.props.match.params.boulder
-    const routeName = this.props.match.params.routeName
+    const boulderName = this.props.boulderName
+    const routeName = this.props.routeName
     const path = pathToImages(boulderName, routeName)
     preLoadImages(boulderData[boulderName].routes[routeName]["image names"], path)
   }
 
-
   render() {
-    const boulder = this.props.match.params.boulder
-    const route = this.props.match.params.routeName
+    const boulder = this.props.boulderName
+    const route = this.props.routeName
     const pathTo = pathToImages(boulder, route)
-    const hold = boulderData[boulder].routes[route].holds[this.props.active] || {}
+    const hold = boulderData[boulder].routes[route].holds[this.props.activeHold] || {}
 
     return (
       <div className="shelf-outer-wrapper">
@@ -38,7 +37,7 @@ class HoldDetails extends React.Component {
               pic={hold.pic}
             />
             <HoldDescription
-              active={this.props.active !== null}
+              activeHold={this.props.activeHold}
               description={hold.desc}
               isFoot={hold.foothold}
             />

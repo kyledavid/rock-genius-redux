@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import BoulderImage from '../new-components/BoulderImage'
+import BoulderImage from '../components/BoulderImage'
 
 const mapStateToProps = (state) => {
   return null
