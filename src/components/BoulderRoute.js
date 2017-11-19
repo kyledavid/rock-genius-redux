@@ -5,7 +5,7 @@ import Hold from './Hold'
 const BoulderRoute = ({ activeBeta, activeHold, boulderName, routeName, routeData, selectHold }) => (
   <div className="route">
     {routeData ? routeData.holds.map((hold, index) => {
-      const highlightedHolds = routeData['beta'][activeBeta]['activeHolds']
+      const highlightedHolds = routeData.beta ? routeData['beta'][activeBeta]['activeHolds'] : []
       const highlighted = highlightedHolds.includes(index)
       return (
         <Hold

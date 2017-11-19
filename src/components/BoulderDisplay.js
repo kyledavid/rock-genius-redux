@@ -1,7 +1,7 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import { Link, withRouter } from 'react-router-dom'
-import Beta from '../components/Beta'
+import Beta from '../containers/Beta'
 import BoulderImage from '../containers/BoulderImage'
 import Shelf from '../components/Shelf'
 import Footer from './Footer'
@@ -37,8 +37,8 @@ class BoulderDisplay extends React.Component {
   }
 
   componentWillMount() {
-    const { history } = this.props
-
+    const { history, match, selectBoulder } = this.props
+    selectBoulder(match.params.boulderName)
     this.unlisten = history.listen((location, action) => {
       this.resetBeta()
       //this.changeRoute()
@@ -95,7 +95,7 @@ class BoulderDisplay extends React.Component {
   }
 
   render() {
-    let boulderName = formatBoulderName(this.props.match.params.boulder)
+    let boulderName = formatBoulderName(this.props.match.params.boulderName)
 
     return (
       <main

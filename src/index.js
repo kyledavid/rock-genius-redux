@@ -10,7 +10,7 @@ import initialState from '../data-model.json'
 import storeFactory from './store'
 
 
-const store = storeFactory(initialState)
+const store = storeFactory()
 
 window.store = store
 

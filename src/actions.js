@@ -7,6 +7,12 @@ export const clearRoute = () => {
   }
 }
 
+export const clearRouteData = () => {
+  return {
+    type: C.CLEAR_ROUTE_DATA
+  }
+}
+
 export const selectBoulder = (boulderName='the girl') => {
   return {
     type: C.SELECT_BOULDER,

@@ -52,12 +52,13 @@ export const fetching = (state=false, action) => {
 
 export const routeData = (state={}, action) => {
   switch(action.type) {
+    case C.CLEAR_ROUTE_DATA :
+      return null
     case C.CHANGE_ROUTE_DATA :
       return action.payload
     default :
       return state
   }
-  return routeData ? routeData : state
 }
 
 export default combineReducers({
