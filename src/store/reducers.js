@@ -35,7 +35,7 @@ export const activeBeta = (state=null, action) => {
   switch(action.type) {
     case C.SELECT_BETA :
       return action.payload
-    case C.RESET_BETA :
+    case C.CLEAR_BETA :
       return null
     case C.SELECT_ROUTE :
       return null

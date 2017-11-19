@@ -3,9 +3,9 @@ import React from 'react'
 import Boulders from '../utils/boulders.json'
 
 const Beta = props => {
-  const { activeBeta, routeData, routeName } = props
+  const { activeBeta, clearBeta, routeData, routeName, selectBeta } = props
   if (routeData.beta && routeName) {
-    let highlightedHolds = routeData['beta'][activeBeta]
+    let highlightedHolds = activeBeta ? routeData['beta'][activeBeta]['activeHolds'] : null
     return (<div className="beta" id="beta">
       <h3>Problem Beta</h3>
       <p>
@@ -14,8 +14,11 @@ const Beta = props => {
           style={chunk.activeHolds ? { backgroundColor: '#eee' } : null}
           className={activeBeta === index ? 'selected-beta' : null}
           onClick={(e) => {
-            props.updateHighlights(chunk.activeHolds, e)
-            props.setActiveBeta(index, e)
+            if(index === activeBeta){
+              clearBeta()
+            } else {
+              selectBeta(index, e)
+            }
           }}
         >
           {chunk.chunk}</span>),
