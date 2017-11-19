@@ -37,22 +37,13 @@ class BoulderDisplay extends React.Component {
   }
 
   componentWillMount() {
-    const { history, match, selectBoulder } = this.props
+    const { match, selectBoulder } = this.props
     selectBoulder(match.params.boulderName)
-    /*this.unlisten = history.listen((location, action) => {
-      //this.changeRoute()
-    }).bind(this)*/
   }
 
-/*  componentWillUnmount() {
-    this.unlisten()
-  }
-*/
-  changeRoute() {
-
-    const { routeName } = this.props.match.params
+  changeRoute(routeName) {
     const { changeRoute } = this.props
-    if(routeName){changeRoute(routeName)}
+    changeRoute(routeName)
   }
 
   render() {

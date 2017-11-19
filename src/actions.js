@@ -19,6 +19,12 @@ export const clearRouteData = () => {
   }
 }
 
+export const deselectHold = () => {
+  return {
+    type: C.DESELECT_HOLD
+  }
+}
+
 export const selectBoulder = (boulderName='the girl') => {
   return {
     type: C.SELECT_BOULDER,

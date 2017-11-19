@@ -20,6 +20,8 @@ export const routeName = (state=null, action) => {
 
 export const activeHold = (state=null, action) => {
   switch(action.type) {
+    case C.DESELECT_HOLD :
+      return null
     case C.SELECT_ROUTE :
       return null
     case C.SELECT_BOULDER :
