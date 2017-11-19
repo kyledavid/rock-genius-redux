@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { clearRoute, clearRouteData, fetchRouteData, selectBoulder, selectRoute } from '../actions'
 
 const mapStateToProps = state => ({
+  activeHold: state.activeHold,
   routeName: state.routeName,
 })
 

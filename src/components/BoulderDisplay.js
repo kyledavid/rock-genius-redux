@@ -9,89 +9,50 @@ import boulderData from '../utils/boulders.json'
 import { preLoadImages, formatBoulderName, pathToImages } from '../utils/helpers'
 
 class BoulderDisplay extends React.Component {
-  constructor(props) {
-    super(props)
 
-    this.state = {
-      active: null,
-      highlightedHolds: [],
-      activeBeta: null,
-      boulderName: '',
-      routeName: '',
-    }
+  isNewRoute(newRoute, oldRoute) {
+    return newRoute !== oldRoute && newRoute
+  }
 
-    this.setActive = this.setActive.bind(this)
-    this.highLightHolds = this.highLightHolds.bind(this)
-    this.setActiveBeta = this.setActiveBeta.bind(this)
-    this.setBoulderName = this.setBoulderName.bind(this)
-    this.resetBeta = this.resetBeta.bind(this)
+  handleNewRoute(routeName) {
+    const { changeRoute, fetchRouteData } = this.props
+    changeRoute(routeName)
+    fetchRouteData(routeName)
+  }
+
+  noCurrentRoute(routeName, oldRoute) {
+    return !routeName && oldRoute
   }
 
   componentWillReceiveProps(nextProps) {
-    const { routeName } = nextProps.match.params
+    const { activeHold, routeName } = nextProps.match.params
     const { changeRoute, clearRoute, fetchRouteData } = this.props
+    const oldRoute = this.props.routeName
 
-    if(routeName && routeName !== this.props.routeName){fetchRouteData(routeName)}
-    if(routeName){changeRoute(routeName)}
-    if(this.props.routeName && !routeName){this.props.clearRoute()}
+    if(this.isNewRoute(routeName, oldRoute)){
+      this.handleNewRoute(routeName)
+    } else if(this.noCurrentRoute(routeName, oldRoute)) {
+      clearRoute()
+    }
   }
 
   componentWillMount() {
     const { history, match, selectBoulder } = this.props
     selectBoulder(match.params.boulderName)
-    this.unlisten = history.listen((location, action) => {
-      this.resetBeta()
+    /*this.unlisten = history.listen((location, action) => {
       //this.changeRoute()
-    }).bind(this)
+    }).bind(this)*/
   }
 
-  componentWillUnmount() {
+/*  componentWillUnmount() {
     this.unlisten()
   }
-
+*/
   changeRoute() {
+
     const { routeName } = this.props.match.params
     const { changeRoute } = this.props
     if(routeName){changeRoute(routeName)}
-  }
-
-  resetBeta() {
-    this.setState({
-      activeBeta: null,
-      highlightedHolds: [],
-    })
-  }
-  setActiveBeta(activeBeta) {
-    this.setState(state => (
-      {
-        activeBeta: state.activeBeta === activeBeta ? null : activeBeta,
-      }),
-    )
-  }
-
-  setActive(active, event) {
-    event.stopPropagation()
-    this.setState(state => (
-      { active: state.active === active ? null : active }
-    ),
-    )
-  }
-
-  highLightHolds(holdList, event) {
-    if (event) {
-      event.stopPropagation()
-    }
-    this.setState(state => (
-      {
-        highlightedHolds: state.highlightedHolds === holdList ? [] : holdList,
-      }),
-    )
-  }
-
-  setBoulderName(boulder) {
-    this.setState({
-      boulderName: boulder,
-    })
   }
 
   render() {
@@ -100,33 +61,17 @@ class BoulderDisplay extends React.Component {
     return (
       <main
         className="container"
-        onClick={(e) => this.setActive(null, e)}
       >
         <h1>
           <Link to="/"><button className="fa fa-arrow-left back-button"></button></Link>
           <span className="rock-name">{boulderName}</span>
         </h1>
-        <BoulderImage
-          routeInfo={{
-            activeHold: this.state.active,
-            highlightedHolds: this.state.highlightedHolds,
-            routeName: this.props.match.params.routeName,
-            setActive: this.setActive,
-          }}
-          boulderData={boulderData}
-        />
+        <BoulderImage />
         <Shelf
-          activeHold={this.state.active}
+          activeHold={this.props.active}
         />
-        <Beta
-          routeName={this.props.match.params.routeName}
-          updateHighlights={this.highLightHolds}
-          setActiveBeta={this.setActiveBeta}
-          activeBeta={this.state.activeBeta}
-          boulderData={boulderData}
-        />
-        <Footer
-        />
+        <Beta />
+        <Footer />
       </main>
     )
   }
