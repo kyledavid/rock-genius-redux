@@ -4,6 +4,7 @@ import { clearRoute, clearRouteData, fetchRouteData, selectBoulder, selectRoute 
 
 const mapStateToProps = state => ({
   activeHold: state.activeHold,
+  boulderName: state.boulderName,
   routeName: state.routeName,
 })
 

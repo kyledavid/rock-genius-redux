@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { formatBoulderName } from '../../utils/helpers'
 
-const BoulderRouteTitle = ({routeName, boulderName, boulderData, rating}) => {
-  let route = routeName ? formatBoulderName(routeName) : 'poop'
+const BoulderRouteTitle = ({routeName, boulderName, rating}) => {
+  let route = routeName ? formatBoulderName(routeName) : 'null'
 
   return (
     <div className="boulder-name">

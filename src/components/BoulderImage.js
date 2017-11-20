@@ -13,19 +13,7 @@ const BoulderImage = props => {
 }
 
 BoulderImage.propTypes = {
-  routeInfo: PropTypes.shape({
-    activeHold: PropTypes.number,
-    highlightedHolds: PropTypes.arrayOf(PropTypes.number),
-    routeName: PropTypes.string,
-  }).isRequired,
-  boulderData: PropTypes.object,
-}
-
-BoulderImage.defaultProps = {
-  routeInfo: {
-    active: null,
-    highlighted: null,
-  }
+  routeName: PropTypes.string,
 }
 
 export default BoulderImage

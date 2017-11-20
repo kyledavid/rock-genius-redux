@@ -21,8 +21,4 @@ Shelf.propTypes = {
   active: PropTypes.number,
 }
 
-Shelf.defaultProps = {
-  active: null,
-}
-
 export default Shelf

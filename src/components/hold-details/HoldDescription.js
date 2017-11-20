@@ -19,9 +19,4 @@ HoldDescription.propTypes = {
   isFoot: PropTypes.bool
 }
 
-HoldDescription.defaultProps = {
-  description: null,
-  isFoot: null
-}
-
 export default HoldDescription

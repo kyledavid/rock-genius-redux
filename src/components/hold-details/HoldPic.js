@@ -20,8 +20,4 @@ HoldPic.propTypes = {
   pic: PropTypes.string,
 }
 
-HoldPic.defaultProps = {
-  pic: null,
-}
-
 export default HoldPic

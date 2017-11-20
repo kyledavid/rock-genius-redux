@@ -44,11 +44,10 @@ const Beta = props => {
 }
 Beta.propTypes = {
   activeBeta: PropTypes.number,
-  boulderData: PropTypes.object,
-}
-
-Beta.defaultProps = {
-  activeBeta: null,
+  clearBeta: PropTypes.func.isRequired,
+  routeData: PropTypes.object,
+  routeName: PropTypes.string,
+  selectBeta: PropTypes.func.isRequired,
 }
 
 export default Beta

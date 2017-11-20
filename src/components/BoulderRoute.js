@@ -22,17 +22,13 @@ const BoulderRoute = ({ activeBeta, activeHold, boulderName, deselectHold, route
 )
 
 BoulderRoute.propTypes = {
+  activeBeta: PropTypes.number,
   activeHold: PropTypes.number,
-  highlightedHolds: PropTypes.arrayOf(PropTypes.number),
   boulderName: PropTypes.string.isRequired,
+  deselectHold: PropTypes.func.isRequired,
   routeName: PropTypes.string.isRequired,
-  selectHold: PropTypes.func.isRequired,
-}
-
-BoulderRoute.defaultProps = {
-  activeBeta: 0,
-  activeHold: null,
-  highlightedHolds: null,
+  routeData: PropTypes.object,
+  selectHold: PropTypes.func.isRequired
 }
 
 export default BoulderRoute

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import HoldPic from './HoldPic'
 import HoldDescription from './HoldDescription'
 import BoulderRouteTitle from '../../containers/BoulderRouteTitle'
@@ -44,6 +45,13 @@ class HoldDetails extends React.Component {
       </div>
     )
   }
+}
+
+HoldDetails.propTypes = {
+  activeHold: PropTypes.number,
+  boulderName: PropTypes.string.isRequired,
+  routeName: PropTypes.string.isRequired,
+  routeData: PropTypes.object.isRequired
 }
 
 export default HoldDetails

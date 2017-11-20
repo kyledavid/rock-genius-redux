@@ -1,5 +1,6 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
+import PropTypes from 'prop-types'
 import { Link, withRouter } from 'react-router-dom'
 import Beta from '../containers/Beta'
 import BoulderImage from '../containers/BoulderImage'
@@ -20,18 +21,15 @@ class BoulderDisplay extends React.Component {
     fetchRouteData(routeName)
   }
 
-  noCurrentRoute(routeName, oldRoute) {
-    return !routeName && oldRoute
-  }
-
   componentWillReceiveProps(nextProps) {
     const { activeHold, routeName } = nextProps.match.params
     const { changeRoute, clearRoute, fetchRouteData } = this.props
     const oldRoute = this.props.routeName
+    const noCurrentRoute = !routeName && oldRoute
 
     if(this.isNewRoute(routeName, oldRoute)){
       this.handleNewRoute(routeName)
-    } else if(this.noCurrentRoute(routeName, oldRoute)) {
+    } else if(noCurrentRoute) {
       clearRoute()
     }
   }
@@ -47,7 +45,7 @@ class BoulderDisplay extends React.Component {
   }
 
   render() {
-    let boulderName = formatBoulderName(this.props.match.params.boulderName)
+    let boulderName = this.props.boulderName ? formatBoulderName(this.props.boulderName) : null
 
     return (
       <main
@@ -66,6 +64,15 @@ class BoulderDisplay extends React.Component {
       </main>
     )
   }
+}
+
+BoulderDisplay.propTypes = {
+  boulderName: PropTypes.string,
+  changeRoute: PropTypes.func.isRequired,
+  clearRoute: PropTypes.func.isRequired,
+  fetchRouteData: PropTypes.func.isRequired,
+  selectBoulder: PropTypes.func.isRequired,
+  routeName: PropTypes.string
 }
 
 export default withRouter(BoulderDisplay)

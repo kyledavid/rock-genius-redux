@@ -26,18 +26,13 @@ const Hold = (props) => {
 }
 
 Hold.propTypes = {
-  active: PropTypes.bool,
+  active: PropTypes.bool.isRequired,
   compStyle: PropTypes.shape({
     bottom: PropTypes.string,
     left: PropTypes.string,
   }).isRequired,
-  highlighted: PropTypes.bool,
+  highlighted: PropTypes.bool.isRequired,
   setActive: PropTypes.func.isRequired,
-}
-
-Hold.defaultProps = {
-  active: null,
-  highlighted: null,
 }
 
 export default Hold
