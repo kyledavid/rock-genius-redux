@@ -2,28 +2,40 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Boulders from '../utils/boulders.json'
 
-const Beta = props => {
-  const { activeBeta, clearBeta, routeData, routeName, selectBeta } = props
-  if (routeData.beta && routeName) {
-    let highlightedHolds = activeBeta ? routeData['beta'][activeBeta]['activeHolds'] : null
-    return (<div className="beta" id="beta">
-      <h3>Problem Beta</h3>
-      <p>
-        {routeData.beta.map((chunk, index) => (<span
+const BetaParagraph = props => {
+  return (
+    <p>
+      {props.routeData.beta.map((chunk, index) => (<span
           key={index}
           style={chunk.activeHolds ? { backgroundColor: '#eee' } : null}
-          className={activeBeta === index ? 'selected-beta' : null}
+          className={props.activeBeta === index ? 'selected-beta' : null}
           onClick={(e) => {
-            if(index === activeBeta){
-              clearBeta()
+            if( index === props.activeBeta){
+              props.clearBeta()
             } else {
-              selectBeta(index, e)
+              props.selectBeta(index, e)
             }
           }}
         >
           {chunk.chunk}</span>),
         )}
-      </p>
+    </p>
+  )
+}
+
+const Beta = props => {
+  const { activeBeta, clearBeta, routeData, routeName, selectBeta } = props
+  const hasRouteWithBeta = routeData.beta && routeName
+
+  if (hasRouteWithBeta) {
+    return (<div className="beta" id="beta">
+      <h3>Problem Beta</h3>
+      <BetaParagraph
+        activeBeta={activeBeta}
+        clearBeta={clearBeta}
+        routeData={routeData}
+        selectBeta={selectBeta}
+      />
     </div>
     )
   } else {
@@ -32,7 +44,7 @@ const Beta = props => {
 }
 Beta.propTypes = {
   activeBeta: PropTypes.number,
-  boulderData: PropTypes.object.isRequired,
+  boulderData: PropTypes.object,
 }
 
 Beta.defaultProps = {

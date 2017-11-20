@@ -1,4 +1,3 @@
-import React from 'react'
 import { connect } from 'react-redux'
 import BoulderRoute from '../components/BoulderRoute'
 import { deselectHold, selectHold } from '../actions'

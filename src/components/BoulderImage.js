@@ -18,7 +18,7 @@ BoulderImage.propTypes = {
     highlightedHolds: PropTypes.arrayOf(PropTypes.number),
     routeName: PropTypes.string,
   }).isRequired,
-  boulderData: PropTypes.object.isRequired,
+  boulderData: PropTypes.object,
 }
 
 BoulderImage.defaultProps = {
