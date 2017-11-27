@@ -8,7 +8,7 @@ const Shelf = ( { activeHold } ) => {
   return (
     <div>
       <Switch>
-        <Route path="/boulders/:boulder/:routeName" render={(props) => <HoldDetails
+        <Route path="/boulders/:boulder/:routeName" render={props => <HoldDetails
           active={activeHold}
           match={props.match} />} />
         <Route path="/boulders/:boulder" component={RouteSelection} />

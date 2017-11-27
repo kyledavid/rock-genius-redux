@@ -9,7 +9,8 @@
     "postinstall": "webpack -p",
     "prod": "NODE_ENV=production node server.js",
     "localprod": "node server.js",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "start-data-server": "node src/data-server/index.js"
   },
   "repository": {
     "type": "git",
@@ -36,11 +37,14 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "cors": "^2.8.4",
     "css-loader": "^0.28.4",
-    "express": "^4.15.4",
+    "express": "^4.16.2",
     "file-loader": "^0.11.2",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.30.1",
+    "minimist": "^1.2.0",
+    "mongoose": "^4.13.5",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
