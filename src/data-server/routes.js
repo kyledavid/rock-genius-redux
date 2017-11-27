@@ -14,12 +14,15 @@ var testData = mongoose.model('TestData', testSchema)
 
 router.get('/get-data', function(req, res, next) {
   testData.find()
-    .then(function(dox) {
-      res.render(doc)
+    .then(function(doc) {
+        res.send(doc)
+    })
+    .catch(function(err) {
+      res.send(err)
     })
 })
 
-router.post('/create', function(req, res, next) {
+router.get('/create', function(req, res, next) {
   var item = {
     title: 'derp',
     content: 'herp',
@@ -27,6 +30,8 @@ router.post('/create', function(req, res, next) {
   }
 
   var newItem = new testData(item)
-  newItems.save()
+  newItem.save()
   res.redirect('/get-data')
 })
+
+module.exports = router
