@@ -16,8 +16,9 @@ class BoulderDisplay extends React.Component {
   }
 
   handleNewRoute(routeName) {
-    const { changeRoute } = this.props
+    const { changeRoute, setFetching } = this.props
     changeRoute(routeName)
+    setFetching()
     // fetchRouteData(routeName)
     this.fetchRouteFromApi(routeName)
   }
@@ -49,7 +50,8 @@ class BoulderDisplay extends React.Component {
   }
 
   componentWillMount() {
-    const { match, selectBoulder } = this.props
+    const { match, selectBoulder, setFetching } = this.props
+    setFetching()
     selectBoulder(match.params.boulderName)
   }
 
@@ -87,6 +89,7 @@ BoulderDisplay.propTypes = {
   changeRoute: PropTypes.func.isRequired,
   clearRoute: PropTypes.func.isRequired,
   selectBoulder: PropTypes.func.isRequired,
+  setFetching: PropTypes.func.isRequired,
   routeName: PropTypes.string
 }
 

@@ -4,12 +4,12 @@ import { Route, Switch } from 'react-router'
 import HoldDetails from '../containers/HoldDetails'
 import RouteSelection from './RouteSelection'
 
-const Shelf = ( { activeHold, fetching } ) => {
+const Shelf = ( { activeHold, fetching, routeData } ) => {
   console.log(`fetching ${fetching}`)
   return (
     <div>
       <Switch>
-        <Route path="/boulders/:boulder/:routeName" render={props => !fetching ? <HoldDetails
+        <Route path="/boulders/:boulder/:routeName" render={props => !fetching && routeData ? <HoldDetails
           active={activeHold}
           match={props.match} /> : <div></div>} />
         <Route path="/boulders/:boulder" component={RouteSelection} />
