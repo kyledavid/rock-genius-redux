@@ -17,3 +17,5 @@ app.get('*',function (req, res) {
 // data flow
 // scroll to load pattern
 // appollo redux + graphql
+// cd "C:\mongodb\bin"
+// "C:\mongodb\bin\mongod"

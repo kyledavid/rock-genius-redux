@@ -55,7 +55,7 @@ export const fetching = (state=false, action) => {
     case C.CHANGE_ROUTE_DATA :
       return false
     default :
-      return false
+      return state
   }
 }
 

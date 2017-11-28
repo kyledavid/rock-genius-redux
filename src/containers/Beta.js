@@ -4,6 +4,7 @@ import { clearBeta, selectBeta } from '../actions'
 
 const mapStateToProps = state => ({
   activeBeta: state.activeBeta,
+  fetching: state.fetching,
   routeData: state.routeData,
   routeName: state.routeName
 })

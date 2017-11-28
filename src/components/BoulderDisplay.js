@@ -77,7 +77,7 @@ class BoulderDisplay extends React.Component {
         <Shelf
           activeHold={this.props.active}
         />
-        {/*<Beta />*/}
+        <Beta />
         <Footer />
       </main>
     )

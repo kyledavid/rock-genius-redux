@@ -24,10 +24,10 @@ const BetaParagraph = props => {
 }
 
 const Beta = props => {
-  const { activeBeta, clearBeta, routeData, routeName, selectBeta } = props
-  const hasRouteWithBeta = routeData.beta && routeName
+  const { activeBeta, clearBeta, fetching, routeData={}, routeName, selectBeta } = props
+  const doneFetching = routeName && routeData && !fetching && routeData.beta
 
-  if (hasRouteWithBeta) {
+  if (doneFetching) {
     return (<div className="beta" id="beta">
       <h3>Problem Beta</h3>
       <BetaParagraph
@@ -45,6 +45,7 @@ const Beta = props => {
 Beta.propTypes = {
   activeBeta: PropTypes.number,
   clearBeta: PropTypes.func.isRequired,
+  fetching: PropTypes.bool.isRequired,
   routeData: PropTypes.object,
   routeName: PropTypes.string,
   selectBeta: PropTypes.func.isRequired,
