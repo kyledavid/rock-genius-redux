@@ -1,0 +1,131 @@
+{
+  "name": "the pearl",
+  "rating": "v5",
+  "imageNames": ["hold-the-third-1.jpg", "start-hold.jpg", "start-hold-two-1.jpg",
+  "sharp-jug-1.jpg", "match-this-2.jpg","bump-this-1.jpg", "top-out-1.jpg"],
+  "beta": [{
+    "chunk": "Start on the decent sidepull with your right hand, with your left on the polished and obvious pocket",
+    "activeHolds": [1,2]
+  },
+  {
+    "chunk": ". "
+  },
+  {
+    "chunk": "Make a high step to the chipped rail with your right foot",
+    "activeHolds": [0,1,2]
+  },
+  {
+    "chunk": ". "
+  },
+  {
+    "chunk": "Grab a higher up rail with your right hand and match",
+    "activeHolds": [0,3]
+  },
+  {
+    "chunk": ". "
+  },
+  {
+    "chunk": "Switch your feet and reach for a jug to your left",
+    "activeHolds": [0,3,4]
+  },
+  {
+    "chunk": ". "
+  },
+  {
+    "chunk": "Get your left foot in the starting pocket and grab a crimpy rail with your right",
+    "activeHolds": [2,4,5]
+  },
+  {
+    "chunk": ". "
+  },
+  {
+    "chunk": "High step again to the rail from before",
+    "activeHolds": [2,3,4,5]
+  },
+  {
+    "chunk": ". "
+  },
+  {
+    "chunk": "Crimp with your left in a large pocket",
+    "activeHolds": [2,3,5,6]
+  },
+  {
+    "chunk": " "
+  },
+  {
+    "chunk": "and bump your left up to the top out jugs.",
+    "activeHolds": [2,3,5,7]
+  }],
+  "holds": [{
+    "position": {
+      "bottom": "130px",
+      "left": "322px"
+    },
+    "desc": "Cracked Rail, former start hold. Use as foothold only.",
+    "foothold": true,
+    "pic": "start-hold.jpg"
+  },
+  {
+    "position": {
+      "bottom": "140px",
+      "left": "310px"
+    },
+    "desc": "Crimpy Sidepull, new starting hold.",
+    "foothold": false,
+    "pic": "start-hold.jpg"
+  },
+  {
+    "position": {
+      "bottom": "177px",
+      "left": "255px"
+    },
+    "desc": "A polished and shallow two finger pocket. The other starting hold.",
+    "foothold": true,
+    "pic": "start-hold-two-1.jpg"
+  },
+  {
+    "position": {
+      "bottom": "270px",
+      "left": "312px"
+    },
+    "desc": "Crimpy Rail, match on this.",
+    "foothold": true,
+    "pic": "hold-the-third-1.jpg"
+  },
+  {
+    "position": {
+      "bottom": "330px",
+      "left": "252px"
+    },
+    "desc": "Sharp Jug",
+    "foothold": true,
+    "pic": "sharp-jug-1.jpg"
+  },
+  {
+    "position": {
+      "bottom": "364px",
+      "left": "273px"
+    },
+    "desc": "Crimpy Rail",
+    "foothold": false,
+    "pic": "match-this-2.jpg"
+  },
+  {
+    "position": {
+      "bottom": "395px",
+      "left": "252px"
+    },
+    "desc": "Crimpy pocket, bump this to top left jug",
+    "foothold": false,
+    "pic": "bump-this-1.jpg"
+  },
+  {
+    "position": {
+      "bottom": "425px",
+      "left": "252px"
+    },
+    "desc": "Jug Topout",
+    "foothold": false,
+    "pic": "top-out-1.jpg"
+  }]
+}

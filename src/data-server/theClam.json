@@ -1,0 +1,72 @@
+{
+  "name": "the clam",
+  "rating": "v3",
+  "image names": ["clam1.jpg", "clam2.jpg", "clam3.jpg",
+  "clam4.jpg", "clam5.jpg","clam6.jpg"],
+  "beta": null,
+  "holds": [
+    {
+      "position": {
+        "bottom": "250px",
+        "left": "505px"
+      },
+      "desc": "Solid flake. Match on this",
+      "foothold": false,
+      "pic": "clam1.jpg"
+    },
+    {
+      "position": {
+        "bottom": "290px",
+        "left": "490px"
+      },
+      "desc": "Crimpy Sidepull",
+      "foothold": false,
+      "pic": "clam2.jpg"
+    },
+    {
+      "position": {
+        "bottom": "325px",
+        "left": "480px"
+      },
+      "desc": "Left hand crimp.",
+      "foothold": false,
+      "pic": "clam2.jpg"
+    },
+    {
+      "position": {
+        "bottom": "340px",
+        "left": "520px"
+      },
+      "desc": "Thin flake sidepull.",
+      "foothold": false,
+      "pic": "clam3.jpg"
+    },
+    {
+      "position": {
+        "bottom": "260px",
+        "left": "590px"
+      },
+      "desc": "Wide flake. Used as foothold only.",
+      "foothold": true,
+      "pic": "clam4.jpg"
+    },
+    {
+      "position": {
+        "bottom": "355px",
+        "left": "422px"
+      },
+      "desc": "Thin leanback",
+      "foothold": false,
+      "pic": "clam5.jpg"
+    },
+    {
+      "position": {
+        "bottom": "435px",
+        "left": "506px"
+      },
+      "desc": "Solid topout jug.",
+      "foothold": false,
+      "pic": "clam6.jpg"
+    }
+  ]
+}
