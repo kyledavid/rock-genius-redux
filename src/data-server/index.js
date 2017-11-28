@@ -19,5 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/json', function(req, res) {
-  res.send(data)
+  setTimeout(() => {
+    res.send(data)
+  }, 500)
 })

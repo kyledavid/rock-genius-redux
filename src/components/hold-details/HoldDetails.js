@@ -16,8 +16,6 @@ class HoldDetails extends React.Component {
     const path = pathToImages(boulderName, routeName)
     const imageNames = routeData["imageNames"]
     preLoadImages(imageNames, path)
-
-
   }
 
   render() {

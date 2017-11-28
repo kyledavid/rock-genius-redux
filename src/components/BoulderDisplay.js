@@ -11,12 +11,14 @@ import { preLoadImages, formatBoulderName, pathToImages } from '../utils/helpers
 
 class BoulderDisplay extends React.Component {
 
-  isNewRoute(newRoute, oldRoute) {
-    return newRoute !== oldRoute && newRoute
+  isNewRoute(newRoute, oldPropsRoute, newPropsRoute) {
+    const isNew = (newRoute !== oldPropsRoute && newRoute !== undefined && newPropsRoute === null)
+    return isNew
   }
 
   handleNewRoute(routeName) {
     const { changeRoute, setFetching } = this.props
+
     changeRoute(routeName)
     setFetching()
     // fetchRouteData(routeName)
@@ -38,11 +40,14 @@ class BoulderDisplay extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { activeHold, routeName } = nextProps.match.params
-    const { changeRoute, clearRoute } = this.props
-    const oldRoute = this.props.routeName
-    const noCurrentRoute = !routeName && oldRoute
+    const { changeRoute, clearRoute, fetching } = this.props
+    const oldPropsRoute = this.props.routeName
+    const newPropsRoute = nextProps.routeName
+    const noCurrentRoute = !routeName && oldPropsRoute
 
-    if(this.isNewRoute(routeName, oldRoute)){
+    console.log(`oldRoute: ${oldPropsRoute} newRoute: ${nextProps.routeName} paramRoute: ${routeName}`)
+
+    if(this.isNewRoute(routeName, oldPropsRoute, newPropsRoute)){
       this.handleNewRoute(routeName)
     } else if(noCurrentRoute) {
       clearRoute()
@@ -51,7 +56,6 @@ class BoulderDisplay extends React.Component {
 
   componentWillMount() {
     const { match, selectBoulder, setFetching } = this.props
-    setFetching()
     selectBoulder(match.params.boulderName)
   }
 

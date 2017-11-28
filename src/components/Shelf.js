@@ -5,12 +5,10 @@ import HoldDetails from '../containers/HoldDetails'
 import RouteSelection from './RouteSelection'
 
 const Shelf = ( { activeHold, fetching, routeData } ) => {
-  console.log(`fetching ${fetching}`)
   return (
     <div>
       <Switch>
         <Route path="/boulders/:boulder/:routeName" render={props => {
-          console.log(`fetching ${fetching} routedata ${routeData}`)
           return !fetching ? (<HoldDetails
             active={activeHold}
             match={props.match} />)
