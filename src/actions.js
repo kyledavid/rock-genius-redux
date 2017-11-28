@@ -25,6 +25,12 @@ export const deselectHold = () => {
   }
 }
 
+export const setFetching = () => {
+  return {
+    type: C.FETCHING_TRUE
+  }
+}
+
 export const selectBoulder = (boulderName='the girl') => {
   return {
     type: C.SELECT_BOULDER,
@@ -50,6 +56,13 @@ export const selectBeta = (betaIndex) => {
   return {
     type: C.SELECT_BETA,
     payload: betaIndex
+  }
+}
+
+export const sendRouteData = (routeData) => {
+  return {
+    type: C.CHANGE_ROUTE_DATA,
+    payload: routeData
   }
 }
 

@@ -14,7 +14,7 @@ class HoldDetails extends React.Component {
   preCacheImages() {
     const { boulderName, routeName, routeData } = this.props
     const path = pathToImages(boulderName, routeName)
-    const imageNames = routeData["image names"]
+    const imageNames = routeData["imageNames"]
     preLoadImages(imageNames, path)
   }
 

@@ -1,6 +1,6 @@
 import BoulderDisplay from '../components/BoulderDisplay'
 import { connect } from 'react-redux'
-import { clearRoute, clearRouteData, fetchRouteData, selectBoulder, selectRoute } from '../actions'
+import { clearRoute, clearRouteData, fetchRouteData, sendRouteData, selectBoulder, selectRoute } from '../actions'
 
 const mapStateToProps = state => ({
   activeHold: state.activeHold,
@@ -19,17 +19,22 @@ const mapDispatchToProps = dispatch => ({
       selectRoute(name)
     )
   },
-  fetchRouteData(routeName) {
+  sendRouteData(routeData) {
     dispatch(
       clearRouteData()
     )
     dispatch(
-      fetchRouteData(routeName)
+      sendRouteData(routeData)
     )
   },
   selectBoulder(boulderName) {
     dispatch(
       selectBoulder(boulderName)
+    )
+  },
+  setFetching() {
+    dispatch(
+      setFetching()
     )
   }
 })

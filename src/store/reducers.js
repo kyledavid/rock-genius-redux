@@ -49,7 +49,14 @@ export const activeBeta = (state=null, action) => {
 }
 
 export const fetching = (state=false, action) => {
-  return false
+  switch(action.type) {
+    case C.FETCHING_TRUE :
+      return action.payload
+    case C.CHANGE_ROUTE_DATA :
+      return false
+    default :
+      return true
+  }
 }
 
 export const routeData = (state={}, action) => {

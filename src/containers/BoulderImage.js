@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 import BoulderImage from '../components/BoulderImage'
 
-const mapStateToProps = ({ routeName }) => ({
+const mapStateToProps = ({ fetching, routeName }) => ({
+  fetching,
   routeName,
 })
 

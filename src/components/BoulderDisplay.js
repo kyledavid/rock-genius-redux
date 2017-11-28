@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Link, withRouter } from 'react-router-dom'
 import Beta from '../containers/Beta'
 import BoulderImage from '../containers/BoulderImage'
-import Shelf from '../components/Shelf'
+import Shelf from '../containers/Shelf'
 import Footer from './Footer'
 import boulderData from '../utils/boulders.json'
 import { preLoadImages, formatBoulderName, pathToImages } from '../utils/helpers'
@@ -16,14 +16,28 @@ class BoulderDisplay extends React.Component {
   }
 
   handleNewRoute(routeName) {
-    const { changeRoute, fetchRouteData } = this.props
+    const { changeRoute } = this.props
     changeRoute(routeName)
-    fetchRouteData(routeName)
+    // fetchRouteData(routeName)
+    this.fetchRouteFromApi(routeName)
+  }
+
+  fetchRouteFromApi(routeName) {
+    const endpoint = 'http://localhost:7000/get-data/' + routeName
+    const { sendRouteData } = this.props
+
+    fetch(endpoint).then(response => {
+      console.log(response)
+      return response.json()
+    }).then(convertedBody => {
+      console.log(convertedBody[0])
+      sendRouteData(convertedBody[0])
+    })
   }
 
   componentWillReceiveProps(nextProps) {
     const { activeHold, routeName } = nextProps.match.params
-    const { changeRoute, clearRoute, fetchRouteData } = this.props
+    const { changeRoute, clearRoute } = this.props
     const oldRoute = this.props.routeName
     const noCurrentRoute = !routeName && oldRoute
 
@@ -38,6 +52,8 @@ class BoulderDisplay extends React.Component {
     const { match, selectBoulder } = this.props
     selectBoulder(match.params.boulderName)
   }
+
+
 
   changeRoute(routeName) {
     const { changeRoute } = this.props
@@ -59,7 +75,7 @@ class BoulderDisplay extends React.Component {
         <Shelf
           activeHold={this.props.active}
         />
-        <Beta />
+        {/*<Beta />*/}
         <Footer />
       </main>
     )
@@ -70,7 +86,6 @@ BoulderDisplay.propTypes = {
   boulderName: PropTypes.string,
   changeRoute: PropTypes.func.isRequired,
   clearRoute: PropTypes.func.isRequired,
-  fetchRouteData: PropTypes.func.isRequired,
   selectBoulder: PropTypes.func.isRequired,
   routeName: PropTypes.string
 }

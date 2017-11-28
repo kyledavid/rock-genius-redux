@@ -31,7 +31,7 @@ router.get('/get-data/:name', function(req, res, next) {
   var name= "The Pearl"
   boulderModel.find({name: req.params.name})
     .then(function(docs) {
-        res.send(docs)
+        res.status(200).json(docs)
     })
     .catch(function(err) {
       res.send(err)

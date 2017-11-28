@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 import Shelf from '../components/Shelf'
 
 const mapStateToProps = state => ({
-  activeHold: state.activeHold
+  activeHold: state.activeHold,
+  fetching: state.fetching
 })
 
 export default connect(mapStateToProps)(Shelf)
