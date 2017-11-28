@@ -4,7 +4,7 @@ import { selectRoute } from '../actions'
 
 const mapStateToProps = (state) => ({
   routeName: state.routeName,
-  rating: state.routeData.rating,
+  routeData: state.routeData,
   boulderName: state.boulderName
 })
 

@@ -4,11 +4,12 @@ import HoldPic from './HoldPic'
 import HoldDescription from './HoldDescription'
 import BoulderRouteTitle from '../../containers/BoulderRouteTitle'
 import { pathToImages, preLoadImages } from '../../utils/helpers'
-import boulderData from '../../utils/boulders.json'
 
 class HoldDetails extends React.Component {
-  componentWillMount() {
-    this.preCacheImages()
+  componentDidUpdate(prevProps) {
+    if(!prevProps.routeData && this.props.routeData) {
+      this.preCacheImages()
+    }
   }
 
   preCacheImages() {
@@ -18,10 +19,15 @@ class HoldDetails extends React.Component {
     preLoadImages(imageNames, path)
   }
 
+  getActiveHold() {
+    const { activeHold, routeData } = this.props
+    return routeData ? routeData['holds'][activeHold] : null
+  }
+
   render() {
-    const { activeHold, boulderName, routeName, routeData } = this.props
+    const { activeHold, boulderName, routeName } = this.props
     const pathTo = pathToImages(boulderName, routeName)
-    const hold = routeData['holds'][activeHold] || {}
+    const hold = this.getActiveHold()
 
     return (
       <div className="shelf-outer-wrapper">
@@ -33,12 +39,12 @@ class HoldDetails extends React.Component {
           <div className="shelf-inner-wrapper">
             <HoldPic
               pathTo={pathTo}
-              pic={hold.pic}
+              pic={hold ? hold.pic : null}
             />
             <HoldDescription
               activeHold={activeHold}
-              description={hold.desc}
-              isFoot={hold.foothold}
+              description={hold ? hold.desc : null}
+              isFoot={hold ? hold.foothold : null}
             />
           </div>
         </aside>
@@ -51,7 +57,7 @@ HoldDetails.propTypes = {
   activeHold: PropTypes.number,
   boulderName: PropTypes.string.isRequired,
   routeName: PropTypes.string.isRequired,
-  routeData: PropTypes.object.isRequired
+  routeData: PropTypes.object
 }
 
 export default HoldDetails

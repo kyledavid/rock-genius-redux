@@ -59,7 +59,7 @@ export const fetching = (state=false, action) => {
   }
 }
 
-export const routeData = (state={}, action) => {
+export const routeData = (state=null, action) => {
   switch(action.type) {
     case C.CLEAR_ROUTE :
       return null

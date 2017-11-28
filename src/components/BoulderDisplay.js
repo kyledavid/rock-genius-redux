@@ -21,7 +21,6 @@ class BoulderDisplay extends React.Component {
 
     changeRoute(routeName)
     setFetching()
-    // fetchRouteData(routeName)
     this.fetchRouteFromApi(routeName)
   }
 
@@ -30,10 +29,8 @@ class BoulderDisplay extends React.Component {
     const { sendRouteData } = this.props
 
     fetch(endpoint).then(response => {
-      console.log(response)
       return response.json()
     }).then(convertedBody => {
-      console.log(convertedBody[0])
       sendRouteData(convertedBody[0])
     })
   }
@@ -43,9 +40,7 @@ class BoulderDisplay extends React.Component {
     const { changeRoute, clearRoute, fetching } = this.props
     const oldPropsRoute = this.props.routeName
     const newPropsRoute = nextProps.routeName
-    const noCurrentRoute = !routeName && oldPropsRoute
-
-    console.log(`oldRoute: ${oldPropsRoute} newRoute: ${nextProps.routeName} paramRoute: ${routeName}`)
+    const noCurrentRoute = routeName === undefined && newPropsRoute !== null
 
     if(this.isNewRoute(routeName, oldPropsRoute, newPropsRoute)){
       this.handleNewRoute(routeName)
@@ -58,8 +53,6 @@ class BoulderDisplay extends React.Component {
     const { match, selectBoulder, setFetching } = this.props
     selectBoulder(match.params.boulderName)
   }
-
-
 
   changeRoute(routeName) {
     const { changeRoute } = this.props
