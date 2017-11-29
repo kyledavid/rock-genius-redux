@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 var cors = require('cors')
-var port = 7000
+var port = process.env.PORT || 8000
 var routes = require('./routes')
 var bodyParser = require('body-parser')
 var data = require('./boulderData.json')

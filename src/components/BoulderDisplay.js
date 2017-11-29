@@ -25,7 +25,7 @@ class BoulderDisplay extends React.Component {
   }
 
   fetchRouteFromApi(routeName) {
-    const endpoint = 'http://localhost:7000/get-data/' + routeName
+    const endpoint = 'http://localhost:8000/get-data/' + routeName
     const { sendRouteData } = this.props
 
     fetch(endpoint).then(response => {

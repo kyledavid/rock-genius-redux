@@ -1,6 +1,6 @@
 var express = require('express')
 var mongoose = require('mongoose')
-mongoose.connect('localhost:27017/test')
+mongoose.connect('localhost:27017/bouldeRoutes')
 var Schema = mongoose.Schema
 var router = express.Router()
 var pearl = require('./thePearl.json')
