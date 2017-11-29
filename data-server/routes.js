@@ -1,10 +1,12 @@
 var express = require('express')
 var mongoose = require('mongoose')
-mongoose.connect('localhost:27017/bouldeRoutes')
+var uri = process.env.MONGOLAB_URI
+mongoose.connect(uri, { useMongoClient: true })
 var Schema = mongoose.Schema
 var router = express.Router()
 var pearl = require('./thePearl.json')
 var clam = require('./theClam.json')
+
 
 var boulderRoute = new Schema({
   name: String,
