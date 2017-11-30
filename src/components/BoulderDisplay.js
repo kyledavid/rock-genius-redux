@@ -6,6 +6,7 @@ import Beta from '../containers/Beta'
 import BoulderImage from '../containers/BoulderImage'
 import Shelf from '../containers/Shelf'
 import Footer from './Footer'
+const port = process.env.PORT
 import boulderData from '../utils/boulders.json'
 import { preLoadImages, formatBoulderName, pathToImages } from '../utils/helpers'
 
@@ -25,7 +26,7 @@ class BoulderDisplay extends React.Component {
   }
 
   fetchRouteFromApi(routeName) {
-    const endpoint = 'http://localhost:8000/get-data/' + routeName
+    const endpoint = 'http://rock-genius.herokuapp.com/get-data/' + routeName
     const { sendRouteData } = this.props
 
     fetch(endpoint).then(response => {

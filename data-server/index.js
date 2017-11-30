@@ -6,11 +6,6 @@ var routes = require('./routes')
 var bodyParser = require('body-parser')
 var data = require('./boulderData.json')
 
-
-var logger = function() {
-
-}
-
 app.listen(port, function() {
   console.log("App is running on port" + port)
 })

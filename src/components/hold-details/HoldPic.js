@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import NoHold from './noHoldPic'
 
 const HoldPic = (props) => {
   const imgName = props.pic
@@ -13,7 +12,13 @@ const HoldPic = (props) => {
       </div>
     )
   }
-  return <NoHold />
+  return (
+    <div className="zoom-pic">
+      <p className="no-hold">
+        No Hold Selected
+      </p>
+    </div>
+  )
 }
 
 HoldPic.propTypes = {
