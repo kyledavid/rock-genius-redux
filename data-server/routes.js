@@ -6,8 +6,6 @@ var Schema = mongoose.Schema
 var router = express.Router()
 var pearl = require('./thePearl.json')
 var clam = require('./theClam.json')
-var cors = require('cors')
-
 
 var boulderRoute = new Schema({
   name: String,
@@ -30,7 +28,7 @@ var boulderRoute = new Schema({
 
 var boulderModel = mongoose.model('boulderRoute', boulderRoute)
 
-router.get('/get-data/:name', cors(), function(req, res, next) {
+router.get('/get-data/:name', function(req, res, next) {
   var name= "The Pearl"
   boulderModel.find({name: req.params.name})
     .then(function(docs) {
