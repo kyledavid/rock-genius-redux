@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Link, Route, withRouter } from 'react-router-dom'
 import BoulderSelection from './BoulderSelection'
 import BoulderDisplay from '../containers/BoulderDisplay'
+var http = require("http")
 
 class App extends Component {
   componentWillMount() {
