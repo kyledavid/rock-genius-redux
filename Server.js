@@ -23,8 +23,6 @@ app.use(allowCrossDomain)
 app.use(express.static(__dirname + '/build'))
 app.use('/', routes)
 
-
-
 app.listen(port, function() {
   console.log("App is running on port " + port)
 })

@@ -26,7 +26,7 @@ class BoulderDisplay extends React.Component {
   }
 
   fetchRouteFromApi(routeName) {
-    const endpoint = 'https://rock-genius.herokuapp.com/get-data/' + routeName
+    const endpoint = 'https://rock-genius-redux.herokuapp.com/get-data/' + routeName
     const { sendRouteData } = this.props
 
     fetch(endpoint, {mode: 'cors'}).then(response => {
