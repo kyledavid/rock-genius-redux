@@ -7,7 +7,7 @@ class App extends Component {
   componentWillMount() {
     // ping the app every 5 minutes
       setInterval(function() {
-          http.get("http://<your app name>.herokuapp.com");
+          http.get("http://historical-chart.herokuapp.com");
       }, 300000)
   }
   render() {
