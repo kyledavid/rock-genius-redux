@@ -1,3 +1,4 @@
+
 // returns whether the hold is 360 or more pixels from the top
 export const positionFromTop = (index) => {
   const detailContainers = document.querySelectorAll('.single-hold')
@@ -5,17 +6,33 @@ export const positionFromTop = (index) => {
   return detailContainer.getBoundingClientRect().top < -360
 }
 
-// precaches hold images
-export const preLoadImages = (imageNames, path) => {
-  imageNames.map(name => {
-    const image = new Image()
-    const fullPath = path + name
-    image.src = require(`../img/boulders/${fullPath}`)
-    return image
-  })
+const getImage = (url) => {
+	return new Promise((resolve, reject) => {
+		const image = new Image()
+		image.onload = () => {
+			resolve(image)
+		}
+		image.onerror = () => {
+			const err = `Could not load image at ${url}`
+			reject(err)
+		}
+		image.src = require(`../img/boulders/${url}`)
+	})
 }
 
-// formats boulder name to with capital letters
+// precaches hold images
+export const preLoadImages = (imageNames, path) => {
+  const promises = imageNames.map(name => {
+    const fullPath = path + name
+    return getImage(fullPath)
+  })
+	Promise.all(promises)
+		.catch((error) => {
+			console.log(error)
+		})
+}
+
+// formats boulder name with capital letters
 export const formatBoulderName = (unformattedName) => {
   const splitName = unformattedName.split(/-|\s/g)
 	const formattedName = splitName
