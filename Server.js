@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var cors = require('cors')
+var http = require('http')
 var port = process.env.PORT || 8000
 var path = require('path')
 var routes = require('./data-server/routes')
@@ -18,6 +19,12 @@ var allowCrossDomain = function(req, res, next) {
       next();
     }
 }
+
+// ping the app every 5 minutes
+	setInterval(function() {
+		console.log('thangs happd')
+			http.get("http://historical-chart.herokuapp.com");
+	}, 3)
 
 app.use(allowCrossDomain)
 app.use(express.static(__dirname + '/build'))
