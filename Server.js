@@ -20,12 +20,6 @@ var allowCrossDomain = function(req, res, next) {
     }
 }
 
-// ping the app every 5 minutes
-	setInterval(function() {
-		console.log('thangs happd')
-			http.get("http://historical-chart.herokuapp.com");
-	}, 3)
-
 app.use(allowCrossDomain)
 app.use(express.static(__dirname + '/build'))
 app.use('/', routes)

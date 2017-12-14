@@ -9,7 +9,7 @@
     "postinstall": "webpack -p",
     "prod": "NODE_ENV=production node server.js",
     "localprod": "node server.js",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --history-api-fallback --open",
     "start-data-server": "node src/data-server/index.js"
   },
   "repository": {
