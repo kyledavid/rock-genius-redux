@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 
-export const ShelfInnerWrapper = styled.div`
-display: flex;
-flex-direction: column;
-height: 574px;
-padding-top: .5em;
+export const Descriptor = styled.span`
+font-weight: bold;
 `
 
 export const Instructions = styled.h2`
@@ -14,4 +11,20 @@ margin-top: 1em;
 margin-bottom: 0;
 background-color: #fff;
 padding: 0 1em;
+`
+export const ShelfInnerWrapper = styled.div`
+display: flex;
+flex-direction: column;
+height: 574px;
+padding-top: .5em;
+`
+
+export const ShelfOuterWrapper = styled.div`
+position: fixed;
+width: 1200px;
+height: 0;
+margin: auto;
+top: 0;
+left: 0;
+right: 75px;
 `

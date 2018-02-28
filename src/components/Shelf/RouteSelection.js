@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Link, Route } from 'react-router-dom'
-import { Instructions, ShelfInnerWrapper } from './styled'
+import { Instructions, ShelfInnerWrapper, ShelfOuterWrapper } from './styled'
 
 class RouteSelection extends React.Component {
   render() {
     return (
-      <div className="shelf-outer-wrapper">
+      <ShelfOuterWrapper>
         <aside id="detail-shelf">
           <ShelfInnerWrapper>
             <Instructions>Choose a Route</Instructions>
@@ -15,7 +15,7 @@ class RouteSelection extends React.Component {
             </ul>
           </ShelfInnerWrapper>
         </aside>
-      </div>
+      </ShelfOuterWrapper>
     )
   }
 }
