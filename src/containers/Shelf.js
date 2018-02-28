@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Shelf from '../components/Shelf'
+import Shelf from '../components/Shelf/Shelf'
 
 const mapStateToProps = state => ({
   activeHold: state.activeHold,

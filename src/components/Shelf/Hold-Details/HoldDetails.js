@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import HoldPic from './HoldPic'
 import HoldDescription from './HoldDescription'
-import BoulderRouteTitle from '../../containers/BoulderRouteTitle'
-import { pathToImages, preLoadImages } from '../../utils/helpers'
+import BoulderRouteTitle from '../../../containers/BoulderRouteTitle'
+import { pathToImages, preLoadImages } from '../../../utils/helpers'
 
 class HoldDetails extends React.Component {
   componentDidUpdate(prevProps) {

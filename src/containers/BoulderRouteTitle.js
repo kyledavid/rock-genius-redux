@@ -1,4 +1,4 @@
-import BoulderRouteTitle from '../components/hold-details/BoulderRouteTitle'
+import BoulderRouteTitle from '../components/Shelf/Hold-Details/BoulderRouteTitle'
 import { connect } from 'react-redux'
 import { selectRoute } from '../actions'
 

@@ -1,4 +1,4 @@
-import HoldDetails from '../components/hold-details/HoldDetails'
+import HoldDetails from '../components/Shelf/Hold-Details/HoldDetails'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state, props) => {

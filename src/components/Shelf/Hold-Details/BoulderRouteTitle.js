@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import { formatBoulderName } from '../../utils/helpers'
+import { formatBoulderName } from '../../../utils/helpers'
 
 const BoulderRouteTitle = ({routeName, boulderName, routeData}) => {
   let route = routeName ? formatBoulderName(routeName) : 'null'

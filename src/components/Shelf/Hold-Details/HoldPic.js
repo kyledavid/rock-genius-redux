@@ -8,7 +8,7 @@ const HoldPic = (props) => {
   if (props.pic) {
     return (
       <div className="zoom-pic">
-        <img src={imgName ? require(`../../img/boulders/${path}`) : null} alt="Boulder Hold" />
+        <img src={imgName ? require(`../../../img/boulders/${path}`) : null} alt="Boulder Hold" />
       </div>
     )
   }
