@@ -1,11 +1,11 @@
 import React from 'react'
 
 const NoHold = () => (
-  <div className="zoom-pic">
+  <ShelfContent>
     <p className="no-hold">
       No Hold Selected
     </p>
-  </div>
+  </ShelfContent>
 )
 
 export default NoHold

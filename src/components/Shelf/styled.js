@@ -4,7 +4,7 @@ export const Descriptor = styled.span`
 font-weight: bold;
 `
 
-export const DetailShelf = styled.div`
+export const DetailShelf = styled.aside`
 position: absolute;
 right: 0;
 top: 0;
@@ -22,6 +22,34 @@ margin-bottom: 0;
 background-color: #fff;
 padding: 0 1em;
 `
+
+export const ShelfContent = styled.div`
+width: 300px;
+min-height: 200px;
+height: 415px;
+overflow: hidden;
+background-color: #fff;
+box-sizing: border-box;
+img {
+  width: 100%;
+}
+`
+
+export const RouteList = ShelfContent.extend`
+min-height: 300px;
+margin-top: 6.5px;
+list-style-type: none;
+font-size: 1.4em;
+padding: 1em;
+a {
+  text-decoration: none;
+  color: #444;
+}
+li {
+  padding-bottom: .25em;
+}
+`
+
 export const ShelfInnerWrapper = styled.div`
 display: flex;
 flex-direction: column;

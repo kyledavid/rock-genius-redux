@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { ShelfContent } from '../styled'
 
 const HoldPic = (props) => {
   const imgName = props.pic
@@ -7,17 +8,17 @@ const HoldPic = (props) => {
 
   if (props.pic) {
     return (
-      <div className="zoom-pic">
+      <ShelfContent>
         <img src={imgName ? require(`../../../img/boulders/${path}`) : null} alt="Boulder Hold" />
-      </div>
+      </ShelfContent>
     )
   }
   return (
-    <div className="zoom-pic">
+    <ShelfContent>
       <p className="no-hold">
         No Hold Selected
       </p>
-    </div>
+    </ShelfContent>
   )
 }
 
