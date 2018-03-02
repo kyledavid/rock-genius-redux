@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Link, Route } from 'react-router-dom'
-import { Instructions, ShelfInnerWrapper, ShelfOuterWrapper } from './styled'
+import { DetailShelf, Instructions, ShelfInnerWrapper, ShelfOuterWrapper } from './styled'
 
 class RouteSelection extends React.Component {
   render() {
     return (
       <ShelfOuterWrapper>
-        <aside id="detail-shelf">
+        <DetailShelf>
           <ShelfInnerWrapper>
             <Instructions>Choose a Route</Instructions>
             <ul className="route-list">
@@ -14,7 +14,7 @@ class RouteSelection extends React.Component {
               <li><Link to="/boulders/the pearl/the clam" >The Clam</Link></li>
             </ul>
           </ShelfInnerWrapper>
-        </aside>
+        </DetailShelf>
       </ShelfOuterWrapper>
     )
   }

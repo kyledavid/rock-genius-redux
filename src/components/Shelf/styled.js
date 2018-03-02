@@ -4,6 +4,16 @@ export const Descriptor = styled.span`
 font-weight: bold;
 `
 
+export const DetailShelf = styled.div`
+position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+width: 300px;
+font-family: monospace, arial, sans-serif;
+font-size: 13px;
+`
+
 export const Instructions = styled.h2`
 height: 1.87em;
 line-height: 1.15em;

@@ -1,13 +1,3 @@
-#detail-shelf {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 300px;
-  font-family: monospace, arial, sans-serif;
-  font-size: 13px;
-}
-
 .boulder-name {
     margin-top: 2em;
     background-color: #fff;
@@ -45,25 +35,4 @@
   margin-top: .5em;
   padding: 1em;
   flex: 1;
-}
-
-.descriptor-label {
-  font-weight: bold;
-}
-
-.shelf-outer-wrapper {
-  position: fixed;
-  width: 1200px;
-  height: 0;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 75px;
-}
-
-.shelf-inner-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 574px;
-  padding-top: .5em;
 }

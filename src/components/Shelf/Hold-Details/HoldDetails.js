@@ -4,6 +4,7 @@ import HoldPic from './HoldPic'
 import HoldDescription from './HoldDescription'
 import BoulderRouteTitle from '../../../containers/BoulderRouteTitle'
 import { pathToImages, preLoadImages } from '../../../utils/helpers'
+import { DetailShelf, ShelfInnerWrapper, ShelfOuterWrapper } from '../styled'
 
 class HoldDetails extends React.Component {
   componentDidUpdate(prevProps) {
@@ -30,13 +31,13 @@ class HoldDetails extends React.Component {
     const hold = this.getActiveHold()
 
     return (
-      <div className="shelf-outer-wrapper">
-        <aside id="detail-shelf">
+      <ShelfOuterWrapper>
+        <DetailShelf>
           <BoulderRouteTitle
             routeName={routeName}
             boulderName={boulderName}
           />
-          <div className="shelf-inner-wrapper">
+          <ShelfInnerWrapper>
             <HoldPic
               pathTo={pathTo}
               pic={hold ? hold.pic : null}
@@ -46,9 +47,9 @@ class HoldDetails extends React.Component {
               description={hold ? hold.desc : null}
               isFoot={hold ? hold.foothold : null}
             />
-          </div>
-        </aside>
-      </div>
+          </ShelfInnerWrapper>
+        </DetailShelf>
+      </ShelfOuterWrapper>
     )
   }
 }
