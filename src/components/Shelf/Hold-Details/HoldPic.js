@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ShelfContent } from '../styled'
+import { NoHold, ShelfContent } from '../styled'
 
 const HoldPic = (props) => {
   const imgName = props.pic
@@ -15,9 +15,9 @@ const HoldPic = (props) => {
   }
   return (
     <ShelfContent>
-      <p className="no-hold">
+      <NoHold>
         No Hold Selected
-      </p>
+      </NoHold>
     </ShelfContent>
   )
 }

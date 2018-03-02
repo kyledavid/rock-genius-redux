@@ -1,10 +1,11 @@
 import React from 'react'
+import { NoHold } from '../styled'
 
 const NoHold = () => (
   <ShelfContent>
-    <p className="no-hold">
+    <NoHold>
       No Hold Selected
-    </p>
+    </NoHold>
   </ShelfContent>
 )
 

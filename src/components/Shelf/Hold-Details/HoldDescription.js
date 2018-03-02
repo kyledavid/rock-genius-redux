@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Descriptor } from '../styled'
+import { Description, Descriptor } from '../styled'
 
-const HoldDescription = props => (props.activeHold ? <div className="description">
-  <p><span className="descriptor-label">Hold Description </span>{props.description}</p>
-  <p><span className="descriptor-label">Used as foothold? </span>
+const HoldDescription = props => (props.activeHold ? <Description>
+  <p><Descriptor>Hold Description </Descriptor>{props.description}</p>
+  <p><Descriptor>Used as foothold? </Descriptor>
     {props.isFoot ? 'Yes' : 'No'}
   </p>
-</div> :
-<div className="description">
+</Description> :
+<Description>
   <p><Descriptor>Hold Description </Descriptor>{props.description}</p>
   <p><Descriptor>Used as foothold? </Descriptor>
   </p>
-</div>
+</Description>
 )
 
 HoldDescription.propTypes = {

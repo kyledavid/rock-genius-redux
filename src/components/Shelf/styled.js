@@ -1,7 +1,28 @@
 import styled from 'styled-components'
 
+export const BoulderName = styled.div`
+margin-top: 2em;
+background-color: #fff;
+padding: 0 2em;
+height: 2.83em;
+h2 {
+  margin: 0;
+}
+a {
+  color: #888888;
+  text-decoration: none;
+}
+`
+
 export const Descriptor = styled.span`
 font-weight: bold;
+`
+
+export const Description = styled.div`
+background-color: #fff;
+margin-top: .5em;
+padding: 1em;
+flex: 1;
 `
 
 export const DetailShelf = styled.aside`
@@ -21,6 +42,11 @@ margin-top: 1em;
 margin-bottom: 0;
 background-color: #fff;
 padding: 0 1em;
+`
+export const NoHold = styled.p`
+font-family: monospace;
+font-size: 1.6em;
+padding: 14px;
 `
 
 export const ShelfContent = styled.div`
